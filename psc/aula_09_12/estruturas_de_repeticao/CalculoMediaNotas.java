@@ -6,7 +6,7 @@ public class CalculoMediaNotas {
         double nota1, nota2;
         int contador = 1;
         
-        while (contador <= 10) {
+        while (contador <= 3) {
             System.out.print("Digite a nota 1: ");
             nota1 = scanner.nextDouble();
             
