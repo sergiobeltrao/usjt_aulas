@@ -34,7 +34,7 @@ git pull origin main
 
 ## Clonar um Repositório Existente
 
-Crie uma nova pasta e navegue até ela com o terminal e por fim:
+Crie uma nova pasta, navegue até ela com o terminal e por fim:
 ```sh
 git clone https://github.com/sergiobeltrao/usjt_aulas .
 ```
