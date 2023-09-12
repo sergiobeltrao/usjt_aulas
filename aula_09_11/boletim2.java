@@ -9,14 +9,16 @@ public class boletim2 {
 
         double media = (nota1 + nota2) / 2;
 
-        if (media >= 7) {
+        if (media == 10) {
+            JOptionPane.showMessageDialog(null, "Parabéns: " + media);
+        }
+        else if (media >= 7) {
             JOptionPane.showMessageDialog(null, "Aprovado: " + media);
+        }    
+        else if (media >= 4) {
+            JOptionPane.showMessageDialog(null, "Recuperação: " + media);
         }
-            else if (media >=4) {
-            
-                JOptionPane.showMessageDialog(null, "Recuperação: " + media);
-        }
-            else {
+        else {
             JOptionPane.showMessageDialog(null, "Reprovado: " + media);
         }
     }
