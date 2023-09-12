@@ -16,7 +16,14 @@ git remote add origin https://github.com/nomedousuario/repositorio_criado.git
 ```sh
 git add .
 git commit -m "Descrição do commit"
+```
+Para enviar use:
+```sh
 git push origin main
+```
+ou
+```sh
+git push https://token@github.com/sergiobeltrao/usjt_aulas
 ```
 
 ## Atualizar o Repositório Local
@@ -27,6 +34,7 @@ git pull origin main
 
 ## Clonar um Repositório Existente
 
+Crie uma nova pasta e navegue até ela com o terminal e por fim:
 ```sh
 git clone https://github.com/sergiobeltrao/usjt_aulas .
 ```
@@ -43,9 +51,15 @@ Após o pull, analise o código-fonte, faça as edições necessárias, salve e 
 ```sh
 git add .
 git commit -m "Descrição do commit"
+```
+Para enviar use:
+```sh
 git push origin main
 ```
-
+ou
+```sh
+git push https://token@github.com/sergiobeltrao/usjt_aulas
+```
 
 ## Aplicando Regras do .gitignore em Arquivos e Pastas Já Rastreados
 
