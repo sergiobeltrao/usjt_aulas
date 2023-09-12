@@ -6,7 +6,7 @@
 ```sh
 git init
 ```
-Para olhar as configurações atuais:
+Para olhar as configurações atuais
 ```sh
 git config --list
 ```
@@ -17,6 +17,12 @@ git config --global user.email seuemail@email.com
 ```
 ```sh
 git branch -M main
+```
+Para deixar o repositório como "main" para os futuramente criados
+```sh
+git config --global init.defaultBranch main
+```
+```sh
 git remote add origin https://github.com/nomedousuario/repositorio_criado.git
 ```
 
