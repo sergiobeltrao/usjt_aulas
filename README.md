@@ -4,9 +4,18 @@
 ## Configuração Inicial
 
 ```sh
+git init
+```
+Para olhar as configurações atuais:
+```sh
+git config --list
+```
+Fazer a configuração mínima para um commit
+```sh
 git config --global user.name "Seu Nome"
 git config --global user.email seuemail@email.com
-git init
+```
+```sh
 git branch -M main
 git remote add origin https://github.com/nomedousuario/repositorio_criado.git
 ```
