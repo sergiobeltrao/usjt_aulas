@@ -1,0 +1,91 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Boletim",
+            "request": "launch",
+            "mainClass": "Boletim",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "Boletim2",
+            "request": "launch",
+            "mainClass": "Boletim2",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "CalculoMediaNotas",
+            "request": "launch",
+            "mainClass": "CalculoMediaNotas",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "OlaMundo",
+            "request": "launch",
+            "mainClass": "OlaMundo",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "SomaDoisNumeros",
+            "request": "launch",
+            "mainClass": "SomaDoisNumeros",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "TesteValor",
+            "request": "launch",
+            "mainClass": "TesteValor",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "calculoMediaJOption",
+            "request": "launch",
+            "mainClass": "calculoMediaJOption",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "AteAcertar",
+            "request": "launch",
+            "mainClass": "psc.aula_09_18.AteAcertar",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "Conta1a100",
+            "request": "launch",
+            "mainClass": "psc.aula_09_18.Conta1a100",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "Pares50a500",
+            "request": "launch",
+            "mainClass": "psc.aula_09_18.Pares50a500",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "TesteLivroDeNotas",
+            "request": "launch",
+            "mainClass": "psc.aula_09_19.TesteLivroDeNotas",
+            "projectName": "usjt_aulas_99afe096"
+        }
+    ]
+}
