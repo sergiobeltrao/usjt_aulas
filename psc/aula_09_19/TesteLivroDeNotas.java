@@ -5,7 +5,8 @@ public class TesteLivroDeNotas {
     public static void main(String[] args) {
         String nomeDisciplina = showInputDialog("Digite o nome da disciplina");
         LivroDeNotas livro = new LivroDeNotas();
-        livro.exibirMensagem(nomeDisciplina);
+        livro.nomeDisciplina = nomeDisciplina;
+        livro.exibirMensagem();
         System.out.println("Até logo");
     }
 }
