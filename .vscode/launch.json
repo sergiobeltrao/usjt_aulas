@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Jogo2",
+            "request": "launch",
+            "mainClass": "Jogo2",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "MegaSena",
             "request": "launch",
             "mainClass": "MegaSena",
