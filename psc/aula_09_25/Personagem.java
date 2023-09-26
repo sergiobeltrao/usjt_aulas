@@ -25,7 +25,7 @@ public class Personagem {
             fome--;
             energia = Math.min(10, energia + 1);
         } else {
-            System.out.println(nome + " sem fome");
+            System.out.println(nome + " sem fome...");
         }
     }
 
