@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Jogo3",
+            "request": "launch",
+            "mainClass": "Jogo3",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "Jogo2",
             "request": "launch",
             "mainClass": "Jogo2",
