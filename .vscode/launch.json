@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Cachaça2",
+            "request": "launch",
+            "mainClass": "psc.Zoeiras.Cachaça2",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "Cachaça",
             "request": "launch",
             "mainClass": "psc.Zoeiras.Cachaça",
