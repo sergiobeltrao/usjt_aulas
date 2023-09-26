@@ -1,38 +1,41 @@
 public class Personagem {
     String nome;
-    int energia = 10, fome = 0, sono = 0;
+    int energia = 10;
+    int fome = 0;
+    int sono = 0;
 
-    void cacar () {
+    void cacar() {
         if (energia >= 2) {
-            System.out.println(nome +" esta cacando");
+            System.out.println(nome + " cacando...");
             energia = energia - 2;
+            
             if (fome < 10) {
-             fome = fome + 1;
+                fome = fome + 1;
             }
+            
             sono = Math.min(sono + 1, 10);
-        } 
-        else {
-            System.out.println(nome +" esta sem energia para cacar");
+        } else {
+            System.out.println("sem energia para cacar...");
         }
     }
-    void comer () {
-        if (fome>= 1) {
-            System.out.println(nome +" esta comendo...");
-            fome = fome - 1;
+
+    void comer() {
+        if (fome >= 1) {
+            System.out.println(nome + " comendo...");
+            fome--;
             energia = Math.min(10, energia + 1);
-        }
-        else {
-            System.out.println(nome +" esta sem fome...");
+        } else {
+            System.out.println(nome + " sem fome");
         }
     }
-    void dormir () {
-       if(sono>=1) {
-            System.out.println(nome +" esta dormindo...");
-            sono = sono - 1;
-            energia = energia < 10? energia + 1: 10;
-        }
-       else {
-            System.out.println(nome + "esta sem sono...");
+
+    void dormir() {
+        if (sono >= 1) {
+            System.out.println(nome + " dormindo...");
+            sono--;
+            energia = energia < 10 ? energia + 1 : 10;
+        } else {
+            System.out.println(nome + " sem sono...");
         }
     }
 }
