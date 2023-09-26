@@ -1,13 +1,13 @@
 public class Personagem {
     String nome;
-    int energia, fome, sono;
+    int energia = 10, fome = 0, sono = 0;
 
     void cacar () {
         if (energia >= 2) {
             System.out.println(nome +" esta cacando");
             energia = energia - 2;
             if (fome < 10) {
-             fome = fome++;
+             fome = fome + 1;
             }
             sono = Math.min(sono + 1, 10);
         } 
@@ -18,8 +18,8 @@ public class Personagem {
     void comer () {
         if (fome>= 1) {
             System.out.println(nome +" esta comendo...");
-            fome--;
-            energia = Math.min(10, energia++);
+            fome = fome - 1;
+            energia = Math.min(10, energia + 1);
         }
         else {
             System.out.println(nome +" esta sem fome...");
@@ -28,8 +28,8 @@ public class Personagem {
     void dormir () {
        if(sono>=1) {
             System.out.println(nome +" esta dormindo...");
-            sono--;
-            energia = energia < 10? energia++: 10;
+            sono = sono - 1;
+            energia = energia < 10? energia + 1: 10;
         }
        else {
             System.out.println(nome + "esta sem sono...");
