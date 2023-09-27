@@ -2,8 +2,7 @@ import java.util.Random;
 
 public class Jogo3 {
     public static void main(String[] args) throws InterruptedException {
-        Personagem cacador = new Personagem();
-        cacador.nome = "Bruno";
+        Personagem cacador = new Personagem("Bruno");
         Random random = new Random();
         while (true) {
             int sorteio = random.nextInt(3);
@@ -11,6 +10,8 @@ public class Jogo3 {
                 case 0: cacador.cacar();
                     break;
                 case 1: cacador.comer();
+                    break;
+                case 2: cacador.vida();
                     break;
                 default: cacador.dormir();
             }
