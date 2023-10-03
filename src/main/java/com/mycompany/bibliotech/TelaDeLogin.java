@@ -8,13 +8,36 @@ package com.mycompany.bibliotech;
  *
  * @author Sergio
  */
+import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class TelaDeLogin extends javax.swing.JFrame {
+    //private javax.swing.JPasswordField campoSenha;
+    //private javax.swing.JTextField campoUsuario;
 
     /**
      * Creates new form TelaDeLogin
      */
     public TelaDeLogin() {
         initComponents();
+        Connect();
+    }
+
+    Connection con;
+    PreparedStatement pst;
+    ResultSet rs;
+
+    public void Connect() {
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/BIBLIOTECH", "root", "12345");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -63,6 +86,12 @@ public class TelaDeLogin extends javax.swing.JFrame {
         txtSenha.setText("Senha");
         txtSenha.setBorder(null);
         txtSenha.setPreferredSize(new java.awt.Dimension(50, 16));
+
+        campoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoUsuarioActionPerformed(evt);
+            }
+        });
 
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,8 +184,35 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_txtMensagemTelaLoginActionPerformed
 
     private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
-        // TODO add your handling code here:
+
+        String user = campoUsuario.getText();
+        String pwd = new String(campoSenha.getPassword());
+
+        try {
+            pst = con.prepareStatement("SELECT * FROM USUARIOS");
+            rs = pst.executeQuery();
+
+            while (rs.next()) {
+                String uname = rs.getString("USR_NOME");
+                String password = rs.getString("USR_SENHA");
+
+                if ((user.equals(uname)) && (pwd.equals(password))) {
+                    new TelaPrincipal().setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Esse usuário ou senha é inválido");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
     }//GEN-LAST:event_btnConfirmarActionPerformed
+
+    private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoUsuarioActionPerformed
 
     /**
      * @param args the command line arguments
