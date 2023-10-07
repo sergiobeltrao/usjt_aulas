@@ -44,8 +44,8 @@ Escopo
 
 Exemplos de mensagem:
 
-- "build(login): tela de login incluida"
-- "build(nbproj): sistema de construcao migrado de ant para maven"
+* "build(login): tela de login incluida"
+* "build(nbproj): sistema de construcao migrado de ant para maven"
 
 A inserção do tipo e do resumo do commit é obrigatória, mas o escopo é opcional. No entanto, recomendo que seja incluído para tornar a descrição do que foi feito ainda mais sucinta.
 
@@ -58,3 +58,39 @@ Sempre que for fazer um commit, utilize a branch 'develop'. O código só será 
 ## Imagens utilizadas
 
 Para as imagens que serão incluídas no projeto, tome cuidado com imagens protegidas por direitos autorais. Recomendo o uso de sites como [PixaBay](https://pixabay.com/), [Pexels](https://www.pexels.com/pt-br/), [Unsplash](https://unsplash.com/pt-br) ou similares, que permitem o uso das imagens livremente. Nada de imagem do Google... :pinched_fingers:
+
+
+## Versionamento
+
+Usaremos como base o [Semantic Versioning](https://semver.org/)
+
+Exemplo:
+
+```
+4.8.12-alpha | beta | rc (Sufixos de pré-lançamento)
+│ │ │
+│ │ │
+│ │ └─⫸ Correção (Patch)
+│ │
+│ └─⫸ Versão Secundária (Minor)
+│
+└─⫸ Versão Principal (Major)
+```
+
+* Versão Principal: Inclui mudanças significativas que podem afetar a compatibilidade com versões anteriores.
+
+* Versão Secundária: Introduz novas funcionalidades ou aprimoramentos nas funcionalidades existentes sem quebrar a compatibilidade com versões anteriores.
+
+* Correção: Essencialmente mantém as funcionalidades existentes, mas corrige problemas ou bugs no software.
+
+Zeros à esquerda não devem ser adicionados, e o formato X.Y.Z deve ser sempre respeitado. Assim que o pacote for lançado, qualquer modificação no código resultará em um novo número de versão. Caso a versão secundária seja incrementada, a versão de correção deve ser redefinida para zero. Da mesma forma, se a versão principal for incrementada, tanto a versão secundária quanto a de correção devem ser zeradas.
+
+Sufixos de pré-lançamento.
+
+* Alpha: Fase inicial de desenvolvimento. O software tem funcionalidades incompletas.
+
+* Beta: Fase intermediária. As funcionalidades principais estão incompletas.
+
+* RC: Sigla para Release Candidate. É a fase de pré-lançamento, focada na correção de bugs e na melhoria da estabilidade.
+
+Usaremos os sufixos caso necessário a partir da versão 1.0.0. O desenvolvimento será iniciado na versão 0.1.0, e a partir daí o número será incrementado.
