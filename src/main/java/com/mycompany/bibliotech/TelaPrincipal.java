@@ -26,45 +26,96 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtOla = new javax.swing.JTextField();
+        menuLateral = new javax.swing.JPanel();
+        txtMenuPrincipal = new javax.swing.JTextField();
+        campoCentral = new javax.swing.JPanel();
+        txtTemporario = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela Principal");
 
-        txtOla.setEditable(false);
-        txtOla.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
-        txtOla.setText("Olá mundo!");
-        txtOla.setBorder(null);
-        txtOla.addActionListener(new java.awt.event.ActionListener() {
+        menuLateral.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        menuLateral.setPreferredSize(new java.awt.Dimension(272, 40));
+
+        txtMenuPrincipal.setEditable(false);
+        txtMenuPrincipal.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        txtMenuPrincipal.setText("Menu Principal");
+        txtMenuPrincipal.setBorder(null);
+
+        javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
+        menuLateral.setLayout(menuLateralLayout);
+        menuLateralLayout.setHorizontalGroup(
+            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLateralLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(txtMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        menuLateralLayout.setVerticalGroup(
+            menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuLateralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        campoCentral.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        txtTemporario.setEditable(false);
+        txtTemporario.setFont(new java.awt.Font("Segoe UI", 0, 25)); // NOI18N
+        txtTemporario.setText("AS FUNCIONALIDADES DO PROGRAMA");
+        txtTemporario.setBorder(null);
+        txtTemporario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtOlaActionPerformed(evt);
+                txtTemporarioActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout campoCentralLayout = new javax.swing.GroupLayout(campoCentral);
+        campoCentral.setLayout(campoCentralLayout);
+        campoCentralLayout.setHorizontalGroup(
+            campoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(campoCentralLayout.createSequentialGroup()
+                .addGap(283, 283, 283)
+                .addComponent(txtTemporario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(284, Short.MAX_VALUE))
+        );
+        campoCentralLayout.setVerticalGroup(
+            campoCentralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(campoCentralLayout.createSequentialGroup()
+                .addGap(344, 344, 344)
+                .addComponent(txtTemporario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(344, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(566, 566, 566)
-                .addComponent(txtOla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(581, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(menuLateral, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(campoCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addComponent(txtOla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(campoCentral, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuLateral, javax.swing.GroupLayout.DEFAULT_SIZE, 726, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtOlaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtOlaActionPerformed
+    private void txtTemporarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTemporarioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtOlaActionPerformed
+    }//GEN-LAST:event_txtTemporarioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,6 +153,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField txtOla;
+    private javax.swing.JPanel campoCentral;
+    private javax.swing.JPanel menuLateral;
+    private javax.swing.JTextField txtMenuPrincipal;
+    private javax.swing.JTextField txtTemporario;
     // End of variables declaration//GEN-END:variables
 }
