@@ -16,9 +16,9 @@ As mensagens dos commits vão ser feitas com base na *Commit Message Format* do 
   │       │             │
   │       │             └─⫸ Resumo em tempo presente. Sem letras maiúsculas, acentuação e ponto final.
   │       │
-  │       └─⫸ Escopo do commit: readme|gitignore|nbproj|login|home|database|contributing
+  │       └─⫸ Escopo do commit: readme|gitignore|nbproj|login|home|database|contributing|gui
   │
-  └─⫸ Tipo do commit: build|docs|feat|fix|perf|refactor|gitres
+  └─⫸ Tipo do commit: build|docs|feat|fix|perf|refactor|gitres|style
 ```
 
 Tipo
@@ -30,7 +30,7 @@ Tipo
 * perf: Uma alteração de código que melhora o desempenho.
 * refactor: Uma alteração de código que não corrige um bug nem adiciona uma funcionalidade.
 * gitres: Uma modificação em algum arquivo do Git que será enviado para o repositório (gitignore por exemplo).
-
+* style: indica uma mudança relacionada ao estilo ou formatação do código.
 
 Escopo
 
@@ -41,6 +41,7 @@ Escopo
 * home: Relacionado à tela principal do programa.
 * database: Relacionado ao banco de dados.
 * contributing: Relacionado ao arquivo das diretrizes de contribuição.
+* gui: Relacionado à interface gráfica.
 
 Exemplos de mensagem:
 
