@@ -52,8 +52,7 @@ A inserção do tipo e do resumo do commit é obrigatória, mas o escopo é opci
 
 ## Branch
 
-Sempre que for fazer um commit, utilize a branch 'develop'. O código só será mesclado na 'main' quando uma funcionalidade estiver completa e for considerada estável.
-
+Sempre que for fazer um commit ou estiver desenvolvendo, utilize a branch 'develop'. Após uma determinada entrega ser concluída, seu código subirá para a branch 'release', que posteriormente será mesclado na 'main', onde será criada a tag de entrega.
 
 ## Imagens utilizadas
 
