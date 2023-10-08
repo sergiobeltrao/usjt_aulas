@@ -49,111 +49,87 @@ public class TelaDeLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelDeLogin = new javax.swing.JPanel();
-        txtMensagemTelaLogin = new javax.swing.JTextField();
-        txtUsuario = new javax.swing.JTextField();
-        txtSenha = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
         campoUsuario = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
-        btnConfirmar = new javax.swing.JButton();
-        imgTelaLogin = new javax.swing.JLabel();
+        btnEntrar = new javax.swing.JButton();
+        txtFacaSeuLogin = new javax.swing.JTextField();
+        imgTelaDeLogin = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Tela de Login");
+        setBackground(new java.awt.Color(204, 204, 204));
 
-        painelDeLogin.setBackground(new java.awt.Color(231, 231, 231));
-        painelDeLogin.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        painelDeLogin.setPreferredSize(new java.awt.Dimension(600, 260));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        txtMensagemTelaLogin.setEditable(false);
-        txtMensagemTelaLogin.setBackground(new java.awt.Color(231, 231, 231));
-        txtMensagemTelaLogin.setText("Digite suas credenciais para entrar");
-        txtMensagemTelaLogin.setBorder(null);
-        txtMensagemTelaLogin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMensagemTelaLoginActionPerformed(evt);
-            }
-        });
-
-        txtUsuario.setEditable(false);
-        txtUsuario.setBackground(new java.awt.Color(231, 231, 231));
-        txtUsuario.setText("Usuário");
-        txtUsuario.setBorder(null);
-        txtUsuario.setPreferredSize(new java.awt.Dimension(50, 16));
-
-        txtSenha.setEditable(false);
-        txtSenha.setBackground(new java.awt.Color(231, 231, 231));
-        txtSenha.setText("Senha");
-        txtSenha.setBorder(null);
-        txtSenha.setPreferredSize(new java.awt.Dimension(50, 16));
-
+        campoUsuario.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
         campoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoUsuarioActionPerformed(evt);
             }
         });
 
+        campoSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoSenha.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Senha", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
         campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 campoSenhaActionPerformed(evt);
             }
         });
 
-        btnConfirmar.setText("Entrar");
-        btnConfirmar.addActionListener(new java.awt.event.ActionListener() {
+        btnEntrar.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnEntrar.setText("Entrar");
+        btnEntrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConfirmarActionPerformed(evt);
+                btnEntrarActionPerformed(evt);
             }
         });
 
-        imgTelaLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/books-5589331_172.png"))); // NOI18N
+        txtFacaSeuLogin.setEditable(false);
+        txtFacaSeuLogin.setBackground(new java.awt.Color(255, 255, 255));
+        txtFacaSeuLogin.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        txtFacaSeuLogin.setText("FAÇA SEU LOGIN");
+        txtFacaSeuLogin.setBorder(null);
 
-        javax.swing.GroupLayout painelDeLoginLayout = new javax.swing.GroupLayout(painelDeLogin);
-        painelDeLogin.setLayout(painelDeLoginLayout);
-        painelDeLoginLayout.setHorizontalGroup(
-            painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelDeLoginLayout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(imgTelaLogin)
-                .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDeLoginLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(painelDeLoginLayout.createSequentialGroup()
-                                .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(campoUsuario)
-                                    .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(btnConfirmar)))
-                    .addGroup(painelDeLoginLayout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addComponent(txtMensagemTelaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+        imgTelaDeLogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/teladelogin.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(imgTelaDeLogin)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addComponent(txtFacaSeuLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
-        painelDeLoginLayout.setVerticalGroup(
-            painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(painelDeLoginLayout.createSequentialGroup()
-                .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelDeLoginLayout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addComponent(txtMensagemTelaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(imgTelaDeLogin)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtFacaSeuLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(painelDeLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnConfirmar))
-                    .addGroup(painelDeLoginLayout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(imgTelaLogin)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
+                        .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31)
+                        .addComponent(btnEntrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -161,31 +137,23 @@ public class TelaDeLogin extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(340, 340, 340)
-                .addComponent(painelDeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addGap(337, 337, 337)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(336, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(230, Short.MAX_VALUE)
-                .addComponent(painelDeLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(230, 230, 230))
+                .addGap(206, 206, 206)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(205, Short.MAX_VALUE))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoSenhaActionPerformed
-
-    private void txtMensagemTelaLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMensagemTelaLoginActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMensagemTelaLoginActionPerformed
-
-    private void btnConfirmarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConfirmarActionPerformed
+    private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
 
         String user = campoUsuario.getText();
         String pwd = new String(campoSenha.getPassword());
@@ -209,8 +177,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
             Logger.getLogger(TelaDeLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }//GEN-LAST:event_btnEntrarActionPerformed
 
-    }//GEN-LAST:event_btnConfirmarActionPerformed
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSenhaActionPerformed
 
     private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed
         // TODO add your handling code here:
@@ -252,13 +223,11 @@ public class TelaDeLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnConfirmar;
+    private javax.swing.JButton btnEntrar;
     private javax.swing.JPasswordField campoSenha;
     private javax.swing.JTextField campoUsuario;
-    private javax.swing.JLabel imgTelaLogin;
-    private javax.swing.JPanel painelDeLogin;
-    private javax.swing.JTextField txtMensagemTelaLogin;
-    private javax.swing.JTextField txtSenha;
-    private javax.swing.JTextField txtUsuario;
+    private javax.swing.JLabel imgTelaDeLogin;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtFacaSeuLogin;
     // End of variables declaration//GEN-END:variables
 }
