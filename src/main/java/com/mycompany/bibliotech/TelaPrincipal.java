@@ -28,6 +28,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
 
         menuLateral = new javax.swing.JPanel();
         txtMenuPrincipal = new javax.swing.JTextField();
+        CadUserButton = new javax.swing.JButton();
+        CadLivroButton = new javax.swing.JButton();
+        SairButton2 = new javax.swing.JButton();
         campoCentral = new javax.swing.JPanel();
         txtTemporario = new javax.swing.JTextField();
 
@@ -42,21 +45,49 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtMenuPrincipal.setText("Menu Principal");
         txtMenuPrincipal.setBorder(null);
 
+        CadUserButton.setText("Cadastro de Usuarios");
+
+        CadLivroButton.setText("Cadastro de livros");
+
+        SairButton2.setText("Sair");
+        SairButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SairButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout menuLateralLayout = new javax.swing.GroupLayout(menuLateral);
         menuLateral.setLayout(menuLateralLayout);
         menuLateralLayout.setHorizontalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLateralLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(txtMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addGroup(menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuLateralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CadUserButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CadLivroButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(menuLateralLayout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addComponent(txtMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 83, Short.MAX_VALUE))
+                    .addGroup(menuLateralLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(SairButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         menuLateralLayout.setVerticalGroup(
             menuLateralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuLateralLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(txtMenuPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(CadUserButton)
+                .addGap(18, 18, 18)
+                .addComponent(CadLivroButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(SairButton2)
+                .addGap(15, 15, 15))
         );
 
         campoCentral.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -117,6 +148,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTemporarioActionPerformed
 
+    private void SairButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_SairButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -153,6 +189,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton CadLivroButton;
+    private javax.swing.JButton CadUserButton;
+    private javax.swing.JButton SairButton2;
     private javax.swing.JPanel campoCentral;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JTextField txtMenuPrincipal;
