@@ -12,12 +12,8 @@ public class ConnectionFactory {
 
     public static Connection obtemConexao() {
         try {
-            Connection c = DriverManager.getConnection(
-                    "jdbc:mysql://" + host + ":" + porta + "/" + bd,
-                    usuario,
-                    senha
-            );
-            return c;
+            return DriverManager.getConnection(
+                    "jdbc:mysql://" + host + ":" + porta + "/" + bd + "?user="+usuario+"&password="+senha+"&useTimezone=true&serverTimezone=America/Sao_Paulo");
         } catch (Exception e) {
             e.printStackTrace();
             return null;
