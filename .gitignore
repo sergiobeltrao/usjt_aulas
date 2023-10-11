@@ -75,3 +75,4 @@ local.properties
 
 # Built Visual Studio Code Extensions
 *.vsix
+/psc/Aula 10-10/cadastroPessoas/target/
