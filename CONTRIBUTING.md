@@ -48,7 +48,7 @@ Exemplos de mensagem:
 * "build(login): tela de login incluida"
 * "build(nbproj): sistema de construcao migrado de ant para maven"
 
-A inserção do tipo e do resumo do commit é obrigatória, mas o escopo é opcional. No entanto, recomendo que seja incluído para tornar a descrição do que foi feito ainda mais sucinta.
+No máximo 65 caracteres no total. A inserção do tipo e do resumo do commit é obrigatória, mas o escopo é opcional. No entanto, recomendo que seja incluído para tornar a descrição do que foi feito ainda mais sucinta.
 
 
 ## Branch
