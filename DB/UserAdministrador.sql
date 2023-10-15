@@ -1,27 +1,30 @@
-CREATE DATABASE TesteUserAdministrador;
+CREATE DATABASE TesteUserAdministrador; -- Vocês estão usando bancos separados. É bom unificar.
 
 USE TesteUserAdministrador;
 
 
 CREATE TABLE UserAdministrador (
-    ID INT AUTO_INCREMENT PRIMARY KEY,
-    NomeCompleto VARCHAR(100),
+    ID INT AUTO_INCREMENT PRIMARY KEY, -- O John tava usando um identificador no inicio de cada coluna, acho bacana implementar aqui também
+    NomeCompleto VARCHAR(100), -- Também é bom padronizar entre vocês como as palavras serão separadas. Com letra maiúscula ou underline...
     NomeUsuario VARCHAR(50) UNIQUE,
     Senha VARCHAR(100),
     Email VARCHAR(100) UNIQUE,
     DataCriacao DATETIME,
     DataModificacao DATETIME,
-    NivelAcesso ENUM('Administrador', 'Funcionario', 'Cliente'),
+    NivelAcesso ENUM('Administrador', 'Funcionario', 'Cliente'), -- Como essa tabela é do ADM precisa dessa coluna?
     Ativo BOOLEAN,
     Rua VARCHAR(100),
     Cidade VARCHAR(50),
     Estado VARCHAR(50),
     CEP VARCHAR(10),
     Telefone VARCHAR(15),
-    DataNascimento DATE,
-    -- ConfigNotificacoes BOOLEAN DUVIDAS
+    DataNascimento DATE
+    /* ConfigNotificacoes BOOLEAN DUVIDAS */
+    /* Coloquei o 'ConfigNotificacoes' num bloco de comentario diferente. O '--' dentro da tabela não pode ser usado. Da erro na hora de inserir */
 );
 
+
+-- Não sei se vai implementar o  'ConfigNotificacoes' depois, mas esse script abaixo acaba dando erro porque ele não foi incluído na tabela
 -- Inserir alguns usuários fictícios
 INSERT INTO UserAdministrador (NomeCompleto, NomeUsuario, Senha, Email, DataCriacao, DataModificacao, NivelAcesso, Ativo, Rua, Cidade, Estado, CEP, Telefone, DataNascimento, ConfigNotificacoes)
 VALUES
