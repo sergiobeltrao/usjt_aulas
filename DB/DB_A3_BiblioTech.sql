@@ -32,7 +32,7 @@ INSERT INTO livro ( Li_Titulo, Li_Autor, Li_ISBN, Li_Pagina, Li_Categoria, Li_Ed
 ( 'O Enigma do Passado', 'Ana Santos', '978-4444333222', 304, 'Mistério', 'Editora Enigmas e Revelações', 'Edição Limitada');
 
 SELECT * FROM livro;
-
+-- TESTE
 
 
 
