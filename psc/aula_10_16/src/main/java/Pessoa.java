@@ -102,7 +102,8 @@ public class Pessoa {
         return s;
     }
     public boolean atualizar(){
-        String sql = "UPDATE tb pessoa SET nome=?, fone=?, email=? WHERE codigo=?";
+        String sql = "UPDATE tb_pessoa SET nome=?, fone=?, email=? WHERE codigo=?";
+        String s = "";
         try (Connection c = ConnectionFactory.obtemConexao()){
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1,nome);
@@ -118,6 +119,21 @@ public class Pessoa {
         }
     
     }
+    public boolean apagarPessoa() {
+    String sql = "DELETE FROM tb_pessoa WHERE nome = ?";
+    try (Connection c = ConnectionFactory.obtemConexao()) {
+        PreparedStatement ps = c.prepareStatement(sql);
+        ps.setString(1, nome);
+        int linhasAfetadas = ps.executeUpdate();
+        if (linhasAfetadas > 0) {
+            return true;
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+    return false;
+}
+
     public boolean buscarPessoa(){
         boolean achou = false;
         String sql = "SELECT * FROM tb_pessoa WHERE nome = ?";

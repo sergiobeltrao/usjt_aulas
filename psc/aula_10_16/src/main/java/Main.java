@@ -35,17 +35,48 @@ public class Main {
                     }
                 }
                 case 2 -> {
-                    String nome = JOptionPane.showInputDialog(" Digite o nome");
+    String nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser atualizada");
+    Pessoa p = new Pessoa(nome);
+    if (p.buscarPessoa()) {
+        // Exibir os detalhes da pessoa atual
+        JOptionPane.showMessageDialog(null, "Detalhes da pessoa:\n" + p.toString());
+
+        // Solicitar as informações atualizadas ao usuário
+        String novoNome = JOptionPane.showInputDialog("Digite o novo nome (ou deixe em branco para manter o mesmo):");
+        String novoFone = JOptionPane.showInputDialog("Digite o novo telefone (ou deixe em branco para manter o mesmo):");
+        String novoEmail = JOptionPane.showInputDialog("Digite o novo email (ou deixe em branco para manter o mesmo):");
+
+        // Atualizar os campos, se forem fornecidos
+        if (!novoNome.isEmpty()) {
+            p.setNome(novoNome);
+        }
+        if (!novoFone.isEmpty()) {
+            p.setFone(novoFone);
+        }
+        if (!novoEmail.isEmpty()) {
+            p.setEmail(novoEmail);
+        }
+
+        // Chamar o método de atualização
+        if (p.atualizar()) {
+            JOptionPane.showMessageDialog(null, "Pessoa atualizada com sucesso!");
+        } else {
+            JOptionPane.showMessageDialog(null, "Falha ao atualizar a pessoa.");
+        }
+    } else {
+        JOptionPane.showMessageDialog(null, "Usuário não encontrado");
+    }
+}
+
+                case 3 -> { 
+                    String nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser apagada");
                     Pessoa p = new Pessoa(nome);
-                    if (p.buscarPessoa()){
-                    // Terminar dia 17/10/23
+                    if (p.apagarPessoa()) {
+                        JOptionPane.showMessageDialog(null, "Pessoa apagada com sucesso!");
                     } 
                     else {
-                        JOptionPane.showMessageDialog(null, " Usuario nao encontrado");
+                        JOptionPane.showMessageDialog(null, "Falha ao apagar a pessoa.");
                     }
-                   
-                }
-                case 3 -> {
                 }
                 case 4 -> {
                     Pessoa p = new Pessoa();
