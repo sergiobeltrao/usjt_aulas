@@ -1,7 +1,9 @@
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 public class ConnectionFactory {
+
     private static String usuario = "avnadmin";
     private static String senha = "AVNS_XCkZ5sSCbELTX_FR9kd";
     private static String host = "mysql-1cc252d6-brunoffco-7e33.aivencloud.com";
@@ -19,5 +21,3 @@ public class ConnectionFactory {
         }
     }
 }
-  
-

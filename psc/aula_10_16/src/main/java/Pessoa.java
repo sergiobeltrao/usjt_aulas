@@ -13,7 +13,7 @@ public class Pessoa {
     public Pessoa(String nome) {
         this.nome = nome;
     }
-    
+
     public Pessoa(String nome, String fone, String email) {
         this.nome = nome;
         this.fone = fone;
@@ -81,74 +81,74 @@ public class Pessoa {
         }
 
     }
-    public String listarPessoas(){
+
+    public String listarPessoas() {
         String sql = "SELECT * FROM tb_pessoa";
         String s = "";
-        try (Connection c = ConnectionFactory.obtemConexao()){
+        try (Connection c = ConnectionFactory.obtemConexao()) {
             PreparedStatement ps = c.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 int codigo = rs.getInt("codigo");
                 String nome = rs.getString("nome");
                 String fone = rs.getString("fone");
                 String email = rs.getString("email");
                 s += "codigo" + codigo + "nome" + nome + "fone" + fone + "email" + email + "\n";
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             s += "erro na consulta";
         }
         return s;
     }
-    public boolean atualizar(){
+
+    public boolean atualizar() {
         String sql = "UPDATE tb_pessoa SET nome=?, fone=?, email=? WHERE codigo=?";
         String s = "";
-        try (Connection c = ConnectionFactory.obtemConexao()){
+        try (Connection c = ConnectionFactory.obtemConexao()) {
             PreparedStatement ps = c.prepareStatement(sql);
-            ps.setString(1,nome);
+            ps.setString(1, nome);
             ps.setString(2, fone);
-            ps.setString(3,email);
-            ps.setInt(4,codigo);
+            ps.setString(3, email);
+            ps.setInt(4, codigo);
             ps.execute();
             return true;
-        }
-        catch (Exception e){  
+        } catch (Exception e) {
             e.printStackTrace();
             return false;
         }
-    
-    }
-    public boolean apagarPessoa() {
-    String sql = "DELETE FROM tb_pessoa WHERE nome = ?";
-    try (Connection c = ConnectionFactory.obtemConexao()) {
-        PreparedStatement ps = c.prepareStatement(sql);
-        ps.setString(1, nome);
-        int linhasAfetadas = ps.executeUpdate();
-        if (linhasAfetadas > 0) {
-            return true;
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-    }
-    return false;
-}
 
-    public boolean buscarPessoa(){
+    }
+
+    public boolean apagarPessoa() {
+        String sql = "DELETE FROM tb_pessoa WHERE nome = ?";
+        try (Connection c = ConnectionFactory.obtemConexao()) {
+            PreparedStatement ps = c.prepareStatement(sql);
+            ps.setString(1, nome);
+            int linhasAfetadas = ps.executeUpdate();
+            if (linhasAfetadas > 0) {
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean buscarPessoa() {
         boolean achou = false;
         String sql = "SELECT * FROM tb_pessoa WHERE nome = ?";
-        try (Connection c = ConnectionFactory.obtemConexao()){
+        try (Connection c = ConnectionFactory.obtemConexao()) {
             PreparedStatement ps = c.prepareStatement(sql);
             ps.setString(1, nome);
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
                 codigo = rs.getInt("codigo");
                 fone = rs.getString("fone");
                 email = rs.getString("email");
                 achou = true;
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return achou;
