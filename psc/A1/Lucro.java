@@ -13,7 +13,7 @@ public class Lucro {
         numeroClientes = Integer.parseInt(input);
 
         if (numeroClientes <= 0) {
-            JOptionPane.showMessageDialog(null, "Desculpe, mas o número mínimo de clientes é 1.");
+            JOptionPane.showMessageDialog(null, "O número mínimo de clientes é 1.");
         } else {
             for (int i = 1; i <= numeroClientes; i++) {
                 double valorBebida = Double.parseDouble(JOptionPane.showInputDialog("Cliente " + i + ". Digite o valor gasto em bebidas:"));
@@ -35,7 +35,7 @@ public class Lucro {
 
     public static void main(String[] args) {
         Locale.setDefault(new Locale("pt", "BR"));
-        JOptionPane.showMessageDialog(null, "Atenção! Forneça os dados separando os valores decimais por uma vírgula.");
+        JOptionPane.showMessageDialog(null, "Separe os valores decimais por uma vírgula.");
 
         Lucro sistema = new Lucro();
         sistema.calcularMediaGastoPorCliente();
