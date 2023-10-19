@@ -2,7 +2,7 @@ package psc.A1;
 
 import java.util.Scanner;
 
-public class nota3 {
+public class LivroDeNotas {
     public static void main(String[] args) {
         
         Scanner scanner = new Scanner(System.in);

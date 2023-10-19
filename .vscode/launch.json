@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Lucro",
+            "request": "launch",
+            "mainClass": "psc.A1.Lucro",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "LivroDeNotas",
             "request": "launch",
             "mainClass": "psc.A1.LivroDeNotas",
