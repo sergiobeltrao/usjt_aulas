@@ -1,5 +1,6 @@
 package psc.A1;
 
+import java.util.Locale;
 import javax.swing.JOptionPane;
 
 public class LivroDeNotas {
@@ -35,6 +36,9 @@ public class LivroDeNotas {
     }
 
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("pt", "BR"));
+        JOptionPane.showMessageDialog(null, "Separe os valores decimais por uma vírgula.");
+
         LivroDeNotas livroDeNotas = new LivroDeNotas();
         livroDeNotas.calcularMediaDeCadaAluno();
         livroDeNotas.calcularMediaDaTurma();
