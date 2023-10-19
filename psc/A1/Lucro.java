@@ -15,16 +15,13 @@ public class Lucro {
         if (numeroClientes <= 0) {
             JOptionPane.showMessageDialog(null, "Desculpe, mas o número mínimo de clientes é 1.");
         } else {
-            double mediaDoCliente = 0;
             for (int i = 1; i <= numeroClientes; i++) {
                 double valorBebida = Double.parseDouble(JOptionPane.showInputDialog("Cliente " + i + ". Digite o valor gasto em bebidas:"));
-
                 double valorComida = Double.parseDouble(JOptionPane.showInputDialog("Cliente " + i + ". Digite o valor gasto em comidas:"));
-
                 double valorGasto = valorBebida + valorComida;
                 valorTotalGasto += valorGasto;
-                mediaDoCliente = valorGasto / 2;
-                JOptionPane.showMessageDialog(null, "Média de gasto pelo cliente: R$ " + String.format("%.2f", mediaDoCliente));
+                double mediaDoCliente = valorGasto / 2;
+                JOptionPane.showMessageDialog(null, "Média de gasto pelo cliente " + i + ": R$ " + String.format("%.2f", mediaDoCliente));
             }
         }
     }

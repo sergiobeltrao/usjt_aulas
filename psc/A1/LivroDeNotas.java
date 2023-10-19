@@ -1,50 +1,43 @@
 package psc.A1;
 
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class LivroDeNotas {
-    public static void main(String[] args) {
-        
-        Scanner scanner = new Scanner(System.in);
+    private int numeroAlunos;
+    private double[] mediasDosAlunos;
 
-        System.out.print("Quantos alunos tem a turma: ");
-        int aluno = scanner.nextInt();
-        double media = 0;
+    public void calcularMediaDeCadaAluno() {
+        String input = JOptionPane.showInputDialog("Digite o número de alunos: ");
+        numeroAlunos = Integer.parseInt(input);
+        mediasDosAlunos = new double[numeroAlunos];
 
-        int i = 1;
+        for (int aluno = 0; aluno < numeroAlunos; aluno++) {
+            double notaA1 = Double.parseDouble(JOptionPane.showInputDialog("Nota A1 para o Aluno " + (aluno + 1) + ": "));
+            double notaA2 = Double.parseDouble(JOptionPane.showInputDialog("Nota A2 para o Aluno " + (aluno + 1) + ": "));
+            double notaA3 = Double.parseDouble(JOptionPane.showInputDialog("Nota A3 para o Aluno " + (aluno + 1) + ": "));
 
-        while (i <= aluno) {
-            System.out.println("Digite a nota do Aluno " + i);
-            double notaA1, notaA2, notaA3;
+            double mediaAluno = (notaA1 + notaA2 + notaA3) / 3;
+            mediasDosAlunos[aluno] = mediaAluno;
 
-            System.out.print("Nota A1: ");
-            notaA1 = scanner.nextDouble();
+            JOptionPane.showMessageDialog(null, "Média do Aluno " + (aluno + 1) + ": " + String.format("%.2f", mediaAluno));
+        }
+    }
 
-            System.out.print("Nota A2: ");
-            notaA2 = scanner.nextDouble();
+    public void calcularMediaDaTurma() {
+        double somaMedias = 0;
 
-            System.out.print("Nota A3: ");
-            notaA3 = scanner.nextDouble();
-
-            double mediaAluno = calcularMediaDeCadaAluno(notaA1, notaA2, notaA3);
-            System.out.println("Media do Aluno " + i + ": " + mediaAluno);
-
-            media += mediaAluno;
-
-            i++;
+        for (int aluno = 0; aluno < numeroAlunos; aluno++) {
+            somaMedias += mediasDosAlunos[aluno];
         }
 
-        double mediaGeral = calcularMediaDaTurma(aluno, media);
-        System.out.println("Media da Turma: " + mediaGeral);
-
-        scanner.close();
+        double mediaTurma = somaMedias / numeroAlunos;
+        JOptionPane.showMessageDialog(null, "Média da Turma: " + String.format("%.2f", mediaTurma));
     }
 
-    public static double calcularMediaDeCadaAluno(double notaA1, double notaA2, double notaA3) {
-        return (notaA1 + notaA2 + notaA3) / 3;
-    }
-
-    public static double calcularMediaDaTurma(int aluno, double media) {
-        return media / aluno;
+    public static void main(String[] args) {
+        LivroDeNotas livroDeNotas = new LivroDeNotas();
+        livroDeNotas.calcularMediaDeCadaAluno();
+        livroDeNotas.calcularMediaDaTurma();
     }
 }
+
