@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "LivroDeNotas",
+            "request": "launch",
+            "mainClass": "psc.A1.LivroDeNotas",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
+            "name": "nota3",
+            "request": "launch",
+            "mainClass": "psc.A1.nota3",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "Cachaça2",
             "request": "launch",
             "mainClass": "psc.Zoeiras.Cachaça2",
