@@ -46,8 +46,18 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtMenuPrincipal.setBorder(null);
 
         CadUserButton.setText("Cadastro de Usuarios");
+        CadUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadUserButtonActionPerformed(evt);
+            }
+        });
 
         CadLivroButton.setText("Cadastro de livros");
+        CadLivroButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadLivroButtonActionPerformed(evt);
+            }
+        });
 
         SairButton2.setText("Sair");
         SairButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +162,15 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_SairButton2ActionPerformed
+
+    private void CadLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadLivroButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CadLivroButtonActionPerformed
+
+    private void CadUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadUserButtonActionPerformed
+        new CadastroUsuario().setVisible(true);
+                    this.setVisible(false);
+    }//GEN-LAST:event_CadUserButtonActionPerformed
 
     /**
      * @param args the command line arguments
