@@ -1,0 +1,35 @@
+CREATE DATABASE AluguelFestas;
+
+USE AluguelFestas;
+
+CREATE TABLE Item_Tema (
+    ID INT PRIMARY KEY,
+    Descricao TEXT NOT NULL
+);
+
+CREATE TABLE Tema (
+    ID INT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    ValorAluguel NUMERIC(8,2) NOT NULL
+);
+
+CREATE TABLE Festa (
+	ID INT PRIMARY KEY,
+    ValorCobrado NUMERIC(8,2) NOT NULL,
+    DataInicio DATE,
+    DataFim DATE
+);
+
+CREATE TABLE Endereco (
+    ID INT PRIMARY KEY,
+	Logradouro VARCHAR(150) NOT NULL,
+    Numero INT NOT NULL,
+    Cidade VARCHAR(50) NOT NULL,
+    UF CHAR(2) NOT NULL,
+    CEP CHAR(8) NOT NULL
+);
+CREATE TABLE Cliente (
+    CPF INT PRIMARY KEY,
+    Nome VARCHAR(255) NOT NULL,
+    Telefone VARCHAR(15) NOT NULL
+);
