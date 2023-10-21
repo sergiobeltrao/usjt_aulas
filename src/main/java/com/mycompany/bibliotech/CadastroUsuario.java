@@ -4,12 +4,6 @@
  */
 package com.mycompany.bibliotech;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import javax.swing.JFormattedTextField;
 /**
  *
  * @author bruno
@@ -34,17 +28,22 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
         jFrame1 = new javax.swing.JFrame();
         jFrame2 = new javax.swing.JFrame();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
+        jCalendar2 = new com.toedter.calendar.JCalendar();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
         EnterjButton = new javax.swing.JButton();
         campoUsuario = new javax.swing.JTextField();
         campoUsuario1 = new javax.swing.JTextField();
-        campoUsuario2 = new javax.swing.JTextField();
+        UFTxt = new javax.swing.JTextField();
         campoUsuario3 = new javax.swing.JTextField();
-        campoUsuario4 = new javax.swing.JTextField();
-        campoUsuario5 = new javax.swing.JTextField();
-        campoUsuario6 = new javax.swing.JTextField();
-        campoUsuario8 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jFormattedTextField2 = new javax.swing.JFormattedTextField();
+        DataDeNascimentojDateChooser = new com.toedter.calendar.JDateChooser();
+        campoSenha = new javax.swing.JPasswordField();
+        EndTxt = new javax.swing.JTextField();
+        CEPjButton1 = new javax.swing.JButton();
+        BairroTxt = new javax.swing.JTextField();
+        CepTxt = new javax.swing.JTextField();
+        CidadeTxt = new javax.swing.JTextField();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -93,11 +92,11 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        campoUsuario2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        campoUsuario2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        campoUsuario2.addActionListener(new java.awt.event.ActionListener() {
+        UFTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        UFTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "UF", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        UFTxt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuario2ActionPerformed(evt);
+                UFTxtActionPerformed(evt);
             }
         });
 
@@ -109,38 +108,6 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        campoUsuario4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        campoUsuario4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        campoUsuario4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuario4ActionPerformed(evt);
-            }
-        });
-
-        campoUsuario5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        campoUsuario5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        campoUsuario5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuario5ActionPerformed(evt);
-            }
-        });
-
-        campoUsuario6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        campoUsuario6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        campoUsuario6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuario6ActionPerformed(evt);
-            }
-        });
-
-        campoUsuario8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        campoUsuario8.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Usuário", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
-        campoUsuario8.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoUsuario8ActionPerformed(evt);
-            }
-        });
-
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Administrador", "Funcionario", "Cliente" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,11 +115,52 @@ public class CadastroUsuario extends javax.swing.JFrame {
             }
         });
 
-        jFormattedTextField2.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de nascimento"));
-        jFormattedTextField2.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.MEDIUM))));
-        jFormattedTextField2.addActionListener(new java.awt.event.ActionListener() {
+        DataDeNascimentojDateChooser.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Nascimento"));
+
+        campoSenha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        campoSenha.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Senha", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        campoSenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFormattedTextField2ActionPerformed(evt);
+                campoSenhaActionPerformed(evt);
+            }
+        });
+
+        EndTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        EndTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Endereço", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        EndTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EndTxtActionPerformed(evt);
+            }
+        });
+
+        CEPjButton1.setText("jButton1");
+        CEPjButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CEPjButton1ActionPerformed(evt);
+            }
+        });
+
+        BairroTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        BairroTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Bairro", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        BairroTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BairroTxtActionPerformed(evt);
+            }
+        });
+
+        CepTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CepTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "CEP", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        CepTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CepTxtActionPerformed(evt);
+            }
+        });
+
+        CidadeTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        CidadeTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Cidade", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
+        CidadeTxt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CidadeTxtActionPerformed(evt);
             }
         });
 
@@ -160,72 +168,91 @@ public class CadastroUsuario extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(campoUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(campoUsuario8, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(campoUsuario5, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(campoUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                    .addComponent(campoUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(campoUsuario6, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(156, 156, 156)
-                                .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 14, Short.MAX_VALUE))
+                        .addGap(34, 34, 34)
+                        .addComponent(BairroTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(campoUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(EnterjButton)
-                .addGap(274, 274, 274))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(EnterjButton)
+                        .addGap(35, 35, 35)))
+                .addComponent(CidadeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(EndTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(campoUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoUsuario1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(DataDeNascimentojDateChooser, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(531, 531, 531)
+                        .addComponent(CEPjButton1))
+                    .addComponent(UFTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addContainerGap(356, Short.MAX_VALUE)
+                    .addComponent(CepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(181, 181, 181)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(campoUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoUsuario5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoUsuario, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(DataDeNascimentojDateChooser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoSenha, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(96, 96, 96))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(campoUsuario3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(campoUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EndTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addComponent(CEPjButton1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(campoUsuario6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoUsuario1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoUsuario2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoUsuario8, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
+                        .addComponent(CidadeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(BairroTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jFormattedTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addComponent(campoUsuario4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
+                .addComponent(UFTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42)
                 .addComponent(EnterjButton)
-                .addGap(39, 39, 39))
+                .addGap(20, 20, 20))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(200, 200, 200)
+                    .addComponent(CepTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(251, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void EnterjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnterjButtonActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_EnterjButtonActionPerformed
 
     private void campoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuarioActionPerformed
@@ -236,53 +263,41 @@ public class CadastroUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUsuario1ActionPerformed
 
-    private void campoUsuario2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario2ActionPerformed
+    private void UFTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UFTxtActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_campoUsuario2ActionPerformed
+    }//GEN-LAST:event_UFTxtActionPerformed
 
     private void campoUsuario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoUsuario3ActionPerformed
 
-    private void campoUsuario4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUsuario4ActionPerformed
-
-    private void campoUsuario5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUsuario5ActionPerformed
-
-    private void campoUsuario6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUsuario6ActionPerformed
-
-    private void campoUsuario8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoUsuario8ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoUsuario8ActionPerformed
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jFormattedTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField2ActionPerformed
-       JFormattedTextField dateField = new JFormattedTextField();
-dateField.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); // Use o formato da sua máscara
-        try {
-            String inputText = dateField.getText();
-            Date date = dateFormat.parse(inputText);
-            // Aqui, você pode usar o objeto 'date' como desejar
-            System.out.println("Data inserida: " + date);
-        } catch (ParseException ex) {
-            // A entrada não é uma data válida
-            System.out.println("Data inserida não é válida.");
-            // Você pode exibir uma mensagem de erro ao usuário ou realizar outras ações de tratamento de erro aqui
-        }
-    }
-}); 
-    }//GEN-LAST:event_jFormattedTextField2ActionPerformed
+    private void campoSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoSenhaActionPerformed
+
+    private void EndTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EndTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EndTxtActionPerformed
+
+    private void CEPjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CEPjButton1ActionPerformed
+
+    }//GEN-LAST:event_CEPjButton1ActionPerformed
+
+    private void BairroTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BairroTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BairroTxtActionPerformed
+
+    private void CepTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CepTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CepTxtActionPerformed
+
+    private void CidadeTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CidadeTxtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CidadeTxtActionPerformed
 
     /**
      * @param args the command line arguments
@@ -320,17 +335,22 @@ dateField.addActionListener(new ActionListener() {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField BairroTxt;
+    private javax.swing.JButton CEPjButton1;
+    private javax.swing.JTextField CepTxt;
+    private javax.swing.JTextField CidadeTxt;
+    private com.toedter.calendar.JDateChooser DataDeNascimentojDateChooser;
+    private javax.swing.JTextField EndTxt;
     private javax.swing.JButton EnterjButton;
+    private javax.swing.JTextField UFTxt;
+    private javax.swing.JPasswordField campoSenha;
     private javax.swing.JTextField campoUsuario;
     private javax.swing.JTextField campoUsuario1;
-    private javax.swing.JTextField campoUsuario2;
     private javax.swing.JTextField campoUsuario3;
-    private javax.swing.JTextField campoUsuario4;
-    private javax.swing.JTextField campoUsuario5;
-    private javax.swing.JTextField campoUsuario6;
-    private javax.swing.JTextField campoUsuario8;
+    private com.toedter.calendar.JCalendar jCalendar1;
+    private com.toedter.calendar.JCalendar jCalendar2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JFormattedTextField jFormattedTextField2;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     // End of variables declaration//GEN-END:variables
