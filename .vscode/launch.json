@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Vetores",
+            "request": "launch",
+            "mainClass": "Vetores",
+            "projectName": ""
+        },
+        {
+            "type": "java",
             "name": "Lucro",
             "request": "launch",
             "mainClass": "psc.A1.Lucro",
