@@ -8,5 +8,9 @@ public class TesteVetorDinamico {
             v.add(i);
             v.exibeVetor();
         }
+        for (int i=1; i<=8; i++){
+            System.out.println("\n" + v.remove() + " saiu");
+            v.exibeVetor();
+        }
     }
 }
