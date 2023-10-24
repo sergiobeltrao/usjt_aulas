@@ -18,20 +18,19 @@ public class VetorDinamico {
 
     public void add(int dado) {
         if (estaCheio()) {
-            this.aumentaCapacidade();
+            this.redimensionaVetor(2.0);
         }
         this.dados[this.quantidade] = dado;
         this.quantidade++;
     }
 
-    public void aumentaCapacidade() {
-        int[] aux = new int[this.capacidade * 2];
+    public void redimensionaVetor(double multiplicador) {
+        int[] aux = new int[(int) (this.capacidade * multiplicador)];
         for (int i = 0; i < quantidade; i++) {
             aux[i] = this.dados[i];
         }
-
         this.dados = aux;
-        this.capacidade = this.capacidade * 2;
+        this.capacidade = (int) (this.capacidade * multiplicador);
 
     }
 
@@ -54,13 +53,8 @@ public class VetorDinamico {
     public int remove() {
         this.quantidade--;
         int temp = this.dados[this.quantidade];
-        if (this.quantidade <= 1.0 / 4.0 * this.capacidade) {
-            int[] aux = new int[this.capacidade / 2];
-            for (int i = 0; i < this.quantidade; i++) {
-                aux[i] = this.dados[i];
-            }
-            this.dados = aux;
-            this.capacidade = this.capacidade / 2;
+        if (this.capacidade >= 4 && this.quantidade <= 1.0 / 4.0 * this.capacidade) {
+            this.redimensionaVetor(0.5);
         }
         return temp;
     }
