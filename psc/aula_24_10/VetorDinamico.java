@@ -37,9 +37,17 @@ public class VetorDinamico {
     public void exibeVetor() {
         System.out.printf("\nCapacidade do vetor: %d\nQuantidade de elementos: %d\nLista:\n", this.capacidade,
                 this.quantidade);
-        for (int i = 0; i < this.quantidade; i++) {
-            System.out.print(this.dados[i] + " ");
+
+        if (this.estaVazio()) {
+            System.out.println("Vazio");
+        } else {
+
+            for (int i = 0; i < this.quantidade; i++) {
+                System.out.print(this.dados[i] + " ");
+
+            }
         }
+
     }
 
     public boolean estaVazio() {
@@ -50,13 +58,14 @@ public class VetorDinamico {
         }
     }
 
-    public int remove() {
-        this.quantidade--;
-        int temp = this.dados[this.quantidade];
-        if (this.capacidade >= 4 && this.quantidade <= 1.0 / 4.0 * this.capacidade) {
-            this.redimensionaVetor(0.5);
+    public void remove() {
+        if (!estaVazio()) {
+            this.quantidade--;
+
+            if (this.capacidade >= 4 && this.quantidade <= 1.0 / 4.0 * this.capacidade) {
+                this.redimensionaVetor(0.5);
+            }
         }
-        return temp;
     }
 
 }

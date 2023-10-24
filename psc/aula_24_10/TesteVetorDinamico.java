@@ -7,7 +7,7 @@ public class TesteVetorDinamico {
         }
 
         for (int i = 1; i <= 8; i++) {
-            System.out.println(v.remove() + " saiu");
+            //System.out.println(v.remove() + " saiu");
             v.exibeVetor();
         }
 
