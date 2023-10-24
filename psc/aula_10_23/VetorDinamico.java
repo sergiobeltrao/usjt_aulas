@@ -1,54 +1,64 @@
 package psc.aula_10_23;
 
 public class VetorDinamico {
-    private int [] dados;
+    private int[] dados;
     private int capacidade;
     private int quantidade;
 
-    public VetorDinamico(){
+    public VetorDinamico() {
         this.capacidade = 4;
         this.dados = new int[this.capacidade];
     }
 
     public boolean cheio() {
-        if(this.quantidade == this.capacidade)
+        if (this.quantidade == this.capacidade)
             return true;
         else
             return false;
     }
 
     public void add(int dado) {
-        if (cheio()){
-            this.maiscapacidade();
+        if (cheio()) {
+            this.redimensionaVetor(2.0);
         }
         this.dados[this.quantidade] = dado;
         this.quantidade++;
-        
+
     }
-    
-    public void maiscapacidade() {
-        int[] aux = new int[this.capacidade *2];
-        for (int i=0; i<this.quantidade; i++)
+
+    public void redimensionaVetor(double multiplicador) {
+        int[] aux = new int[(int) (this.capacidade * multiplicador)];
+        for (int i = 0; i < this.quantidade; i++)
             aux[i] = this.dados[i];
         this.dados = aux;
-        this.capacidade = this.capacidade*2;
+        this.capacidade = (int) (this.capacidade * multiplicador);
     }
 
     public void exibeVetor() {
-        System.out.printf (" Capacidade do vetor: %d\n Quantidade de elementos: %d\n Lista: \n", this.capacidade, this.quantidade);
-        for (int i=0; i<this.quantidade; i++)
-            System.out.print(this.dados[i] + " ");
+        System.out.printf(" Capacidade do vetor: %d\n Quantidade de elementos: %d\n Lista: \n", this.capacidade,
+                this.quantidade);
+        if (this.vazio())
+            System.out.println("Vazia");
+        else
+            for (int i = 0; i < this.quantidade; i++)
+                System.out.print(this.dados[i] + " ");
     }
 
-    public boolean vazio(){
+    public boolean vazio() {
         if (this.quantidade == 0)
             return true;
         else
             return false;
     }
 
-    public int remove (){
-        this.quantidade--;
-        return this.dados[this.quantidade];
+    public void remove() {
+        if (!vazio()) {
+            this.quantidade--;
+            if (this.capacidade >= 4 && this.quantidade <= 1.0 / 4.0 * this.capacidade) {
+                this.redimensionaVetor(0.5);
+            }
+
+        }
+
     }
 }
