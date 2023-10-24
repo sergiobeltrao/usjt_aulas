@@ -1,3 +1,5 @@
+package psc.aula_10_23;
+
 public class VetorDinamico {
     private int [] dados;
     private int capacidade;
