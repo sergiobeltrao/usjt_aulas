@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TesteVetorDinamico",
+            "request": "launch",
+            "mainClass": "psc.aula_10_23.TesteVetorDinamico",
+            "projectName": "usjt_aulas_99afe096"
+        },
+        {
+            "type": "java",
             "name": "Vetores1",
             "request": "launch",
             "mainClass": "psc.aula_10_23.Vetores1",
