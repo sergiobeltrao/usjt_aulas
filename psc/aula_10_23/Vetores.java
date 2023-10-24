@@ -1,3 +1,5 @@
+package psc.aula_10_23;
+
 import java.util.Scanner;
 
 public class Vetores {
