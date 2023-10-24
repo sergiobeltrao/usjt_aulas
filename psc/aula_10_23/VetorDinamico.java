@@ -18,5 +18,11 @@ public class VetorDinamico {
             this.dados[this.quantidade] = dado;
             this.quantidade++;
         }
+    public void aumentoCapacidade () {
+        int[] aux = new int[this.capacidade *2];
+        for (int i=0; i < this.quantidade; i++)
+            aux[i] = this.dados[i];
+            
+        }
     }
 }
