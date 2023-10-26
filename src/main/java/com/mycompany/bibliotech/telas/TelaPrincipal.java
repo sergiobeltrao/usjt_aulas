@@ -32,7 +32,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         txtMenuPrincipal = new javax.swing.JTextField();
         CadUserButton = new javax.swing.JButton();
         CadLivroButton = new javax.swing.JButton();
-        SairButton2 = new javax.swing.JButton();
+        btnEncerrarSessao = new javax.swing.JButton();
         campoCentral = new javax.swing.JPanel();
         txtTemporario = new javax.swing.JTextField();
 
@@ -61,10 +61,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        SairButton2.setText("Sair");
-        SairButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnEncerrarSessao.setText("Encerrar sessão");
+        btnEncerrarSessao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SairButton2ActionPerformed(evt);
+                btnEncerrarSessaoActionPerformed(evt);
             }
         });
 
@@ -85,7 +85,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addGap(0, 83, Short.MAX_VALUE))
                     .addGroup(menuLateralLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(SairButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(btnEncerrarSessao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         menuLateralLayout.setVerticalGroup(
@@ -98,7 +98,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(CadLivroButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(SairButton2)
+                .addComponent(btnEncerrarSessao)
                 .addGap(15, 15, 15))
         );
 
@@ -160,10 +160,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTemporarioActionPerformed
 
-    private void SairButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SairButton2ActionPerformed
+    private void btnEncerrarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEncerrarSessaoActionPerformed
         // TODO add your handling code here:
-        this.dispose();
-    }//GEN-LAST:event_SairButton2ActionPerformed
+                    new TelaDeLogin().setVisible(true);
+            this.dispose();
+    }//GEN-LAST:event_btnEncerrarSessaoActionPerformed
 
     private void CadLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadLivroButtonActionPerformed
         // TODO add your handling code here:
@@ -212,7 +213,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CadLivroButton;
     private javax.swing.JButton CadUserButton;
-    private javax.swing.JButton SairButton2;
+    private javax.swing.JButton btnEncerrarSessao;
     private javax.swing.JPanel campoCentral;
     private javax.swing.JPanel menuLateral;
     private javax.swing.JTextField txtMenuPrincipal;
