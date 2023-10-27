@@ -64,32 +64,49 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="VoltarButton" min="-2" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="NomeTxt" pref="300" max="32767" attributes="0"/>
-                              <Component id="NicknameTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                              <Component id="EmailTxt" alignment="0" pref="300" max="32767" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
                               <Component id="EndTxt" alignment="0" pref="300" max="32767" attributes="0"/>
                               <Component id="BairroTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                              <Component id="EnterButton" max="32767" attributes="0"/>
                           </Group>
                           <Component id="CepTxt1" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="DataDeNascimentoDateChooser" min="-2" pref="312" max="-2" attributes="0"/>
-                          <Component id="SenhaTxt" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="CidadeTxt" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="UFTxt" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="SenhaTxt1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
                           <Component id="CepTxt" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="CargoBox" min="-2" pref="300" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="NomeTxt" pref="300" max="32767" attributes="0"/>
+                                  <Component id="NicknameTxt" alignment="0" pref="300" max="32767" attributes="0"/>
+                                  <Component id="EmailTxt" alignment="0" pref="300" max="32767" attributes="0"/>
+                                  <Component id="EmailTxt1" alignment="0" pref="300" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="DataDeNascimentoDateChooser" min="-2" pref="312" max="-2" attributes="0"/>
+                                  <Component id="SenhaTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="SenhaTxt1" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="CargoBox" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="VoltarButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="327" max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="312" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
+              <Component id="EnterButton" min="-2" pref="300" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -112,6 +129,11 @@
                   <Component id="SenhaTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="EmailTxt1" min="-2" pref="50" max="-2" attributes="0"/>
+                  <Component id="CargoBox" min="-2" pref="49" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="CepTxt1" alignment="3" pref="59" max="32767" attributes="0"/>
                   <Component id="CepTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
@@ -125,12 +147,9 @@
                   <Component id="BairroTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
                   <Component id="UFTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="CargoBox" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-                  <Component id="EnterButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="EnterButton" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
               <Component id="VoltarButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -365,6 +384,23 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="VoltarButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EmailTxt1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="CPF">
+              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailTxt1ActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
