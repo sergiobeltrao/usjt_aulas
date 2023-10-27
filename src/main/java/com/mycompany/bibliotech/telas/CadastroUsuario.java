@@ -302,7 +302,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_SenhaTxt1ActionPerformed
 
     private void VoltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoltarButtonActionPerformed
-                    new TelaPrincipal().setVisible(true);
+                    new TelaPrincipalAdministrador().setVisible(true);
             this.dispose();
     }//GEN-LAST:event_VoltarButtonActionPerformed
 
