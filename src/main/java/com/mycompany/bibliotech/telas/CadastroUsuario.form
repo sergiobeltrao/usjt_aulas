@@ -61,41 +61,48 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="nomeTxt" pref="300" max="32767" attributes="0"/>
-                          <Component id="nickTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                          <Component id="emailTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="dataNascChooser" min="-2" pref="312" max="-2" attributes="0"/>
-                          <Component id="cargoBox1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="cpfTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                          <Component id="voltarButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nomeTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="nickTxt" alignment="0" pref="300" max="32767" attributes="0"/>
+                                          <Component id="emailTxt" alignment="0" pref="300" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="endTxt" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="bairroTxt" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="cepTxt" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                          <Component id="senhaTxt" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="sobrenomeTxt" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="dataNascChooser" min="-2" pref="312" max="-2" attributes="0"/>
+                                  <Component id="sexoBox" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cpfTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="foneTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cidadeTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="ufTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="cargoBox" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                                  <Component id="resenhaTxt" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
-                  <Component id="voltarButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="endTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                              <Component id="bairroTxt" alignment="0" pref="300" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="cepTxt" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="senhaTxt" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="enterButton" alignment="1" min="-2" pref="300" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="foneTxt" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="cidadeTxt" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="resenhaTxt" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="ufTxt" min="-2" pref="300" max="-2" attributes="0"/>
-                          <Component id="cargoBox" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="173" max="-2" attributes="0"/>
+                      <Component id="enterButton" min="-2" pref="300" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="618" max="32767" attributes="0"/>
@@ -111,40 +118,44 @@
                   <Component id="dataNascChooser" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="sexoBox" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Component id="sobrenomeTxt" alignment="3" pref="50" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="nickTxt" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="cargoBox1" min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="cpfTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <Component id="foneTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="cidadeTxt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ufTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="nickTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="emailTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                      <Component id="cepTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="endTxt" min="-2" pref="50" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bairroTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="cargoBox" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="senhaTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="resenhaTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="emailTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="cpfTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-              </Group>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="cepTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="foneTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="endTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="cidadeTxt" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="bairroTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="ufTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="resenhaTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="senhaTxt" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="enterButton" alignment="3" min="-2" pref="50" max="-2" attributes="0"/>
-                  <Component id="cargoBox" alignment="3" min="-2" pref="49" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="23" max="32767" attributes="0"/>
+              <Component id="enterButton" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
               <Component id="voltarButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
@@ -218,7 +229,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Nome completo">
+            <TitledBorder title="Nome">
               <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
             </TitledBorder>
           </Border>
@@ -266,7 +277,7 @@
         </Property>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-            <TitledBorder title="Senha">
+            <TitledBorder title="Re-Senha">
               <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
             </TitledBorder>
           </Border>
@@ -403,11 +414,11 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cpfTxtActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JComboBox" name="cargoBox1">
+    <Component class="javax.swing.JComboBox" name="sexoBox">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
-            <StringItem index="0" value="MAS"/>
+            <StringItem index="0" value="MASC"/>
             <StringItem index="1" value="FEM"/>
             <StringItem index="2" value="OUTRO"/>
           </StringArray>
@@ -419,11 +430,28 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cargoBox1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sexoBoxActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
+    </Component>
+    <Component class="javax.swing.JTextField" name="sobrenomeTxt">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="14" style="0"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+            <TitledBorder title="Sobrenome">
+              <Font PropertyName="font" name="Segoe UI" size="14" style="0"/>
+            </TitledBorder>
+          </Border>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="sobrenomeTxtActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
