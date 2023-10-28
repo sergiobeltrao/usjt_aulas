@@ -8,7 +8,7 @@ import com.mycompany.bibliotech.telas.CadastroUsuario;
 
 public class UsuarioCadastroDAO {
 
-    private int codigo;
+  /*  private int codigo;
     private String nick;
     private String senha;
     
@@ -101,7 +101,7 @@ public class UsuarioCadastroDAO {
     @Override
     public String toString() {
         return "UsuarioCadastroDAO{" + "codigo=" + codigo + ", nick=" + nick + ", senha=" + senha + ", nome=" + nome + ", datanasc=" + datanasc + ", email=" + email + ", sexo=" + sexo + ", fone=" + fone + '}';
-    }
+    } */
 /*
     public boolean cadNick() {
         String sql = "INSERT INTO USUARIO (USE_NICK) VALUES (?)";
@@ -268,7 +268,7 @@ public class UsuarioCadastroDAO {
 
     }
     */
-public boolean cadastrar() {
+/*public boolean cadastrar() {
     CadastroUsuario cad = new CadastroUsuario();
     
     String sql = "INSERT INTO USUARIO (USE_NICK, USE_SENHA, USE_TYPE, USE_NOME, USE_SOBRENOME, USE_DATANASC, USE_EMAIL, USE_CRIA, USE_SEXO) " +
@@ -276,24 +276,61 @@ public boolean cadastrar() {
     
     try (Connection c = ConnectionFactory.getConnection();
          PreparedStatement ps = c.prepareStatement(sql)) {
-        ps.setString(1, cad.nickTxt.getText());
-        ps.setString(2, cad.senhaTxt.getText());
-        ps.setString(3, cad.cargoBox.getText());
-        ps.setString(4, cad.nomeTxt.getText());
-        ps.setString(5, cad.sobrenomeTxt.getText());
-        ps.setString(6, cad.dataNascChooser.getText());
-        ps.setString(7, cad.emailTxt.getText());
-        ps.setString(8, cad.sexoTxt.getText());
+            ps.setString(1, cad.nome);
+            ps.setString(2, sobrenome);
+            ps.setString(3, cpf);
+            ps.setString(4, email);
+            ps.setString(5, senha);
+            ps.setString(6, nick);
+            ps.setString(7, sexo);
+            ps.setString(8, dataNascimento);
+            ps.setString(9, endereco);
+            ps.setString(10, bairro);
+            ps.setString(11, cidade);
+            ps.setString(12, uf);
+            ps.setString(13, cep);
+            ps.setString(14, telefone);
+            ps.setString(15, cargo);
 
-        ps.execute();
-        return true;
+int linhasAfetadas = preparedStatement.executeUpdate();
 
-    } catch (Exception e) {
-        e.printStackTrace();
-        return false;
+            return linhasAfetadas > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return false;
+        }
+    } */
+        // ... outros métodos da classe ...
+
+    public boolean cadastrarUsuario(String nome, String sobrenome, String cpf, String email, String senha, String nickname, String sexo, String dataNascimento, String endereco, String bairro, String cidade, String uf, String cep, String telefone, String cargo) {
+     
+            String sql = "INSERT INTO USUARIO (USE_NOME, USE_SOBRENOME, USE_CPF, USE_EMAIL, USE_SENHA, USE_NICK, USE_SEXO, USE_DATANASC, USE_TYPE, USE_CRIA) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
+            
+        try (Connection con = ConnectionFactory.getConnection()) {
+            
+            PreparedStatement stmt = con.prepareStatement(sql);
+            
+            stmt.setString(1, nome);
+            stmt.setString(2, sobrenome);
+            stmt.setString(3, cpf);
+            stmt.setString(4, email);
+            stmt.setString(5, senha);
+            stmt.setString(6, nickname);
+            stmt.setString(7, sexo);
+            stmt.setString(8, dataNascimento);
+            stmt.setString(9, cargo);
+     /*       stmt.setString(9, endereco);
+            stmt.setString(10, bairro);
+            stmt.setString(11, cidade);
+            stmt.setString(12, uf);
+            stmt.setString(13, cep);
+            stmt.setString(14, telefone);
+            stmt.setString(15, cargo); */
+            stmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        } 
     }
-}
-
-    
-    
 }
