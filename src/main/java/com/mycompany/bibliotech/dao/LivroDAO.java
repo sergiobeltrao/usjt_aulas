@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-import model.bean.Livro;
+import com.mycompany.bibliotech.model.bean.Livro;
 
 public class LivroDAO {
 

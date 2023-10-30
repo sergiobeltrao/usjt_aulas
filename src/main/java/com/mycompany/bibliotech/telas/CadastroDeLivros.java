@@ -1,7 +1,7 @@
 package com.mycompany.bibliotech.telas;
 
 import com.mycompany.bibliotech.dao.LivroDAO;
-import model.bean.Livro;
+import com.mycompany.bibliotech.model.bean.Livro;
 
 public class CadastroDeLivros extends javax.swing.JFrame {
 

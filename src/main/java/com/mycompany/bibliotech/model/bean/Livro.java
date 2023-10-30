@@ -1,4 +1,4 @@
-package model.bean;
+package com.mycompany.bibliotech.model.bean;
 
 public class Livro {
 
