@@ -151,7 +151,8 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEncerrarSessaoActionPerformed
 
     private void CadLivroButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadLivroButtonActionPerformed
-        // TODO add your handling code here:
+        new CadastroDeLivros().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_CadLivroButtonActionPerformed
 
     private void CadUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadUserButtonActionPerformed
