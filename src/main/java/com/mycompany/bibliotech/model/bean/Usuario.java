@@ -1,118 +1,74 @@
 package com.mycompany.bibliotech.model.bean;
 
-import java.util.Date;
-
 public class Usuario {
 
     private int userId;
     private String userNick;
     private String userSenha;
-    private UserType userType;
+    // USE_TYPE
     private String userNome;
     private String userSobrenome;
-    private Date userDataNasc;
+    // USE_DATANASC
     private String userEmail;
-    private Date userCria;
-    private UserSexo userSexo;
+    // USE_CRIA
+    //USE_SEXO
     private String userCpf;
-    public enum UserType {
-        ADMIN,
-        BIBLIOTECARIO,
-        CLIENTE
+
+    public int getUserId() {
+        return userId;
     }
-    public enum UserSexo {
-        MASC,
-        FEM,
-        OUTRO
+
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
-    
-        public int getUserId() {
-            return userId;
-        }
-        
-        public String getUserNick() {
-            return userNick;
-        }
 
-        public String getUserSenha() {
-            return userSenha;
-        }
+    public String getUserNick() {
+        return userNick;
+    }
 
-        public UserType getUserType() {
-            return userType;
-        }
+    public void setUserNick(String userNick) {
+        this.userNick = userNick;
+    }
 
-        public String getUserNome() {
-            return userNome;
-        }
+    public String getUserSenha() {
+        return userSenha;
+    }
 
-        public String getUserSobrenome() {
-            return userSobrenome;
-        }
+    public void setUserSenha(String userSenha) {
+        this.userSenha = userSenha;
+    }
 
-        public Date getUserDataNasc() {
-            return userDataNasc;
-        }
+    public String getUserNome() {
+        return userNome;
+    }
 
-        public String getUserEmail() {
-            return userEmail;
-        }
+    public void setUserNome(String userNome) {
+        this.userNome = userNome;
+    }
 
-        public Date getUserCria() {
-            return userCria;
-        }
+    public String getUserSobrenome() {
+        return userSobrenome;
+    }
 
-        public UserSexo getUserSexo() {
-            return userSexo;
-        }
+    public void setUserSobrenome(String userSobrenome) {
+        this.userSobrenome = userSobrenome;
+    }
 
-        public String getUserCpf() {
-            return userCpf;
-        }
+    public String getUserEmail() {
+        return userEmail;
+    }
 
-        public void setUserId(int userId) {
-            this.userId = userId;
-        }
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
+    }
 
-        public void setUserNick(String userNick) {
-            this.userNick = userNick;
-        }
 
-        public void setUserSenha(String userSenha) {
-            this.userSenha = userSenha;
-        }
+    public String getUserCpf() {
+        return userCpf;
+    }
 
-        public void setUserType(UserType userType) {
-            this.userType = userType;
-        }
+    public void setUserCpf(String userCpf) {
+        this.userCpf = userCpf;
+    }
 
-        public void setUserNome(String userNome) {
-            this.userNome = userNome;
-        }
-
-        public void setUserSobrenome(String userSobrenome) {
-            this.userSobrenome = userSobrenome;
-        }
-
-        public void setUserDataNasc(Date userDataNasc) {
-            this.userDataNasc = userDataNasc;
-        }
-
-        public void setUserEmail(String userEmail) {
-            this.userEmail = userEmail;
-        }
-
-        public void setUserCria(Date userCria) {
-            this.userCria = userCria;
-        }
-
-        public void setUserSexo(UserSexo userSexo) {
-            this.userSexo = userSexo;
-        }
-
-        public void setUserCpf(String userCpf) {
-            this.userCpf = userCpf;
-        }
-
-        
 }

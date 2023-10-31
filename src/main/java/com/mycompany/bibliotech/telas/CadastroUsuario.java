@@ -477,36 +477,24 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-           
-            Usuario user = new Usuario();
-            UsuarioCadastroDAO dao = new UsuarioCadastroDAO();
-            
-            
-            user.setUserNome(nomeTxt.getText());
-            user.setUserSobrenome (sobrenomeTxt.getText());
-            user.setUserCpf (cpfTxt.getText());
-            user.setUserEmail (emailTxt.getText());
-            //user.setUserResenha new String(resenhaTxt.getPassword());
-            user.setUserSenha (new String(senhaTxt.getPassword()));
-            user.setUserNick (nickTxt.getText());
-            user.setUserSexo (Usuario.UserSexo.valueOf((String) sexoBox.getSelectedItem()));
-            user.setUserDataNasc(dataNascChooser.getDate());
-           /* user.setUserNome endTxt.getText();
-            user.setUserNome bairroTxt.getText();
-            user.setUserNome cidadeTxt.getText();
-            user.setUserNome ufTxt.getText();
-            user.setUserNome cepTxt.getText();
-            user.setUserNome foneTxt.getText(); */
-            user.setUserType(Usuario.UserType.valueOf((String) cargoBox.getSelectedItem()));
 
+        Usuario user = new Usuario();
+        UsuarioCadastroDAO dao = new UsuarioCadastroDAO();
 
-           dao.cadastrarUsuario(user);        
-      
+        user.setUserNick(nickTxt.getText());
+        user.setUserSenha(new String(senhaTxt.getPassword()));
+        user.setUserNome(nomeTxt.getText());
+        user.setUserSobrenome(sobrenomeTxt.getText());
+        user.setUserEmail(emailTxt.getText());
+        user.setUserCpf(cpfTxt.getText());
+
+        dao.cadastrarUsuario(user);
+
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void nickTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nickTxtActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_nickTxtActionPerformed
 
     private void emailTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailTxtActionPerformed
@@ -554,8 +542,8 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_senhaTxtActionPerformed
 
     private void voltarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_voltarButtonActionPerformed
-                    new TelaPrincipalAdministrador().setVisible(true);
-            this.dispose();
+        new TelaPrincipalAdministrador().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
     private void cpfTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cpfTxtActionPerformed
