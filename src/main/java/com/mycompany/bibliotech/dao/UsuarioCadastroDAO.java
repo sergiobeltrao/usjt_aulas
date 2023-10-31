@@ -23,7 +23,7 @@ public class UsuarioCadastroDAO {
             stmt.setString(5, user.getUserSenha());
             stmt.setString(6, user.getUserNick());
             stmt.setString(7, user.getUserSexo().toString());
-            stmt.setString(8, user.getUserDataNasc().toString());
+            stmt.setDate(8, new java.sql.Date(user.getUserDataNasc().getTime()));            
             stmt.setString(9, user.getUserType().toString());
             stmt.setString(10, user.getUserCria().toString());
             stmt.executeUpdate();
