@@ -268,6 +268,7 @@
             <TitledBorder title="Data de Nascimento"/>
           </Border>
         </Property>
+        <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="resenhaTxt">

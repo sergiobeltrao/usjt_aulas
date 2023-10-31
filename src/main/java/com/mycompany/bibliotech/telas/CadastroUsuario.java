@@ -1,5 +1,6 @@
 package com.mycompany.bibliotech.telas;
 
+import com.mycompany.bibliotech.model.bean.Usuario;
 import com.mycompany.bibliotech.dao.UsuarioCadastroDAO;
 import com.toedter.calendar.JCalendar;
 import com.toedter.calendar.JDateChooser;
@@ -300,6 +301,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         });
 
         dataNascChooser.setBorder(javax.swing.BorderFactory.createTitledBorder("Data de Nascimento"));
+        dataNascChooser.setDateFormatString("yyyy-MM-dd");
 
         resenhaTxt.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         resenhaTxt.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Re-Senha", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14))); // NOI18N
@@ -475,29 +477,31 @@ public class CadastroUsuario extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void enterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterButtonActionPerformed
-     String nome = nomeTxt.getText();
-    String sobrenome = sobrenomeTxt.getText();
-    String cpf = cpfTxt.getText();
-    String email = emailTxt.getText();
-    String resenha = new String(resenhaTxt.getPassword());
-    String senha = new String(senhaTxt.getPassword());
-    String nickname = nickTxt.getText();
-    String sexo = (String) sexoBox.getSelectedItem();
-    String dataNascimento = ((JTextField) dataNascChooser.getDateEditor().getUiComponent()).getText();
-    String endereco = endTxt.getText();
-    String bairro = bairroTxt.getText();
-    String cidade = cidadeTxt.getText();
-    String uf = ufTxt.getText();
-    String cep = cepTxt.getText();
-    String telefone = foneTxt.getText();
-    String cargo = (String) cargoBox.getSelectedItem();
+           
+            Usuario user = new Usuario();
+            UsuarioCadastroDAO dao = new UsuarioCadastroDAO();
+            
+            
+            user.setUserNome(nomeTxt.getText());
+            user.setUserSobrenome (sobrenomeTxt.getText());
+            user.setUserCpf (cpfTxt.getText());
+            user.setUserEmail (emailTxt.getText());
+            //user.setUserResenha new String(resenhaTxt.getPassword());
+            user.setUserSenha (new String(senhaTxt.getPassword()));
+            user.setUserNick (nickTxt.getText());
+            user.setUserSexo (Usuario.UserSexo.valueOf((String) sexoBox.getSelectedItem()));
+            user.setUserDataNasc(dataNascChooser.getDate());
+           /* user.setUserNome endTxt.getText();
+            user.setUserNome bairroTxt.getText();
+            user.setUserNome cidadeTxt.getText();
+            user.setUserNome ufTxt.getText();
+            user.setUserNome cepTxt.getText();
+            user.setUserNome foneTxt.getText(); */
+            user.setUserType(Usuario.UserType.valueOf((String) cargoBox.getSelectedItem()));
 
-    UsuarioCadastroDAO dao = new UsuarioCadastroDAO();
-    if (dao.cadastrarUsuario(nome, sobrenome, cpf, email, senha, nickname, sexo, dataNascimento, endereco, bairro, cidade, uf, cep, telefone, cargo)) {
-        JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!!");
-    } else {
-        JOptionPane.showMessageDialog(null, "Cadastro falhou!!");
-    }
+
+           dao.cadastrarUsuario(user);        
+      
     }//GEN-LAST:event_enterButtonActionPerformed
 
     private void nickTxtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nickTxtActionPerformed
