@@ -12,23 +12,20 @@ public class UsuarioCadastroDAO {
     public void cadastrarUsuario(Usuario user) {
         Connection con = ConnectionFactory.getConnection();
         PreparedStatement stmt = null;
-            
-        try  {
-            stmt = con.prepareStatement("INSERT INTO USUARIO (USE_NOME, USE_SOBRENOME, USE_CPF, USE_EMAIL, USE_SENHA, USE_NICK, USE_SEXO, USE_DATANASC, USE_TYPE, USE_CRIA) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())");
-            
-            stmt.setString(1, user.getUserNome());
-            stmt.setString(2, user.getUserSobrenome());
-            stmt.setString(3, user.getUserCpf());
-            stmt.setString(4, user.getUserEmail());
-            stmt.setString(5, user.getUserSenha());
-            stmt.setString(6, user.getUserNick());
-            stmt.setString(7, user.getUserSexo().toString());
-            stmt.setDate(8, new java.sql.Date(user.getUserDataNasc().getTime()));            
-            stmt.setString(9, user.getUserType().toString());
-            stmt.setString(10, user.getUserCria().toString());
+
+        try {
+            stmt = con.prepareStatement("INSERT INTO USUARIO (USE_ID, USE_NICK, USE_SENHA, USE_TYPE, USE_NOME, USE_SOBRENOME, USE_DATANASC, USE_EMAIL, USE_CRIA, USE_SEXO, USE_CPF) VALUES(NULL, ?, ?, 'ADMIN', ?, ?, '1990-01-12', ?, '2001-09-11', 'MASC', ?)");
+
+            stmt.setString(1, user.getUserNick());
+            stmt.setString(2, user.getUserSenha());
+            stmt.setString(3, user.getUserNome());
+            stmt.setString(4, user.getUserSobrenome());
+            stmt.setString(5, user.getUserEmail());
+            stmt.setString(6, user.getUserCpf());
+
             stmt.executeUpdate();
-            
-           JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
+
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso!");
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Cadastrar: " + ex);
         } finally {
