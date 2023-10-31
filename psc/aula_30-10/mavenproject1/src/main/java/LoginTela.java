@@ -1,12 +1,13 @@
-public class LoginTela extends javax.swing.JFrame {
 
+import javax.swing.JOptionPane;
+
+public class LoginTela extends javax.swing.JFrame {
 
     public LoginTela() {
         super("Sistama Acadêmico");
         initComponents();
         this.setLocationRelativeTo(null);
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -21,6 +22,11 @@ public class LoginTela extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         txtUsuario.setBorder(javax.swing.BorderFactory.createTitledBorder("Usuário"));
+        txtUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioActionPerformed(evt);
+            }
+        });
 
         txtSenha.setBorder(javax.swing.BorderFactory.createTitledBorder("Senha"));
 
@@ -80,12 +86,29 @@ public class LoginTela extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
-      this.dispose();
+        this.dispose();
     }//GEN-LAST:event_btnSairActionPerformed
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        // TODO add your handling code here:
+        String login = txtUsuario.getText();
+        String senha = new String(txtSenha.getPassword());
+        try {
+            Usuario usuario = new Usuario(login, senha);
+            UsuarioDAO dao = new UsuarioDAO();
+            if (dao.existeUsuario(usuario)) {
+                JOptionPane.showMessageDialog(null,"Bem-vindo ao sistema, " +usuario.getNome());
+            } else {
+                JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
+            }
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
+    catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Problemas na conexão");
+            e.priintStackTrace();
+    }
+    private void txtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

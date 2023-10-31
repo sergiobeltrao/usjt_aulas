@@ -4,11 +4,11 @@ import java.sql.DriverManager;
 
 public class ConnectionFactory {
 
-    private String usuario = "avnadmin";
-    private String senha = "AVNS_wC0LYjBl0iFcvbK6pXk";
-    private String host = "mysql-142e36e7-aluno-aaec.a.aivencloud.com";
-    private String porta = "12006";
-    private String bd = "sergio_db";
+    private static String usuario = "avnadmin";
+    private static String senha = "AVNS_wC0LYjBl0iFcvbK6pXk";
+    private static String host = "mysql-142e36e7-aluno-aaec.a.aivencloud.com";
+    private static String porta = "12006";
+    private static String bd = "sergio_db";
 
     public static Connection obtemConexao() {
         try {
