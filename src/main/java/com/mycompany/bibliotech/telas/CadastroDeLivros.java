@@ -32,7 +32,7 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        txtTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder("Títtulo"));
+        txtTitulo.setBorder(javax.swing.BorderFactory.createTitledBorder("Título"));
 
         txtISBN.setBorder(javax.swing.BorderFactory.createTitledBorder("ISBN"));
 
@@ -79,9 +79,7 @@ public class CadastroDeLivros extends javax.swing.JFrame {
                                 .addComponent(txtAnoDePublicacao, javax.swing.GroupLayout.Alignment.TRAILING))
                             .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTitulo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(voltarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(voltarButton))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(74, 74, 74)
@@ -113,9 +111,9 @@ public class CadastroDeLivros extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtAnoDePublicacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(txtNumeroDePaginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEditar)
                     .addComponent(btnDeletar)
@@ -169,7 +167,7 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         
         lv.setTitulo(txtTitulo.getText());
         lv.setIsbn(txtISBN.getText());
-        lv.setAnoDePublicacao(txtAnoDePublicacao.getText());
+        lv.setAnoDePublicacao(Integer.parseInt(txtAnoDePublicacao.getText()));
         lv.setNumeroDePaginas(Integer.parseInt(txtNumeroDePaginas.getText()));
         lv.setQuantidadeLivro(Integer.parseInt(txtQuantidade.getText()));
         lv.setCatrgoria(txtCategoria.getText());

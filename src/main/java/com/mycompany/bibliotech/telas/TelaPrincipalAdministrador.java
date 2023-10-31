@@ -38,14 +38,14 @@ public class TelaPrincipalAdministrador extends javax.swing.JFrame {
             }
         });
 
-        CadLivroButton.setText("Cadastro de livros");
+        CadLivroButton.setText("Cadastro de Livros");
         CadLivroButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CadLivroButtonActionPerformed(evt);
             }
         });
 
-        btnEncerrarSessao.setText("Encerrar sessão");
+        btnEncerrarSessao.setText("Encerrar Sessão");
         btnEncerrarSessao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEncerrarSessaoActionPerformed(evt);

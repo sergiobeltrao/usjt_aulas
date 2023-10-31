@@ -14,11 +14,11 @@ public class LivroDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO LIVRO (LIV_NOME_LIVRO, LIV_ISBN, LIV_ANO_PUBLICACAO, LIV_PAGINA, LIV_QUANTIDADE, LIV_CATEGORIA, LIV_PRECO) VALUES(?, ?, ?, ?, ?, ?, ?)");
+            stmt = con.prepareStatement("INSERT INTO LIVRO (LIV_NOME_LIVRO, LIV_ISBN, LIV_ANO, LIV_PAGINA, LIV_QUANTIDADE, LIV_CATEGORIA, LIV_PRECO) VALUES(?, ?, ?, ?, ?, ?, ?)");
             //stmt.setString(1, "NULL");
             stmt.setString(1, lv.getTitulo());
             stmt.setString(2, lv.getIsbn());
-            stmt.setString(3, lv.getAnoDePublicacao());
+            stmt.setInt(3, lv.getAnoDePublicacao());
             stmt.setInt(4, lv.getNumeroDePaginas());
             stmt.setInt(5, lv.getQuantidadeLivro());
             stmt.setString(6, lv.getCatrgoria());

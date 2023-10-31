@@ -5,7 +5,7 @@ public class Livro {
     private int id;
     private String titulo;
     private String isbn;
-    private String anoDePublicacao;
+    private int anoDePublicacao;
     private int numeroDePaginas;
     private int quantidadeLivro;
     private String catrgoria;
@@ -35,11 +35,11 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    public String getAnoDePublicacao() {
+    public int getAnoDePublicacao() {
         return anoDePublicacao;
     }
 
-    public void setAnoDePublicacao(String anoDePublicacao) {
+    public void setAnoDePublicacao(int anoDePublicacao) {
         this.anoDePublicacao = anoDePublicacao;
     }
 

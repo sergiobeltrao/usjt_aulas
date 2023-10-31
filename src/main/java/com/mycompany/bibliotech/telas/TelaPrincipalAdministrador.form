@@ -124,7 +124,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="CadLivroButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastro de livros"/>
+            <Property name="text" type="java.lang.String" value="Cadastro de Livros"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CadLivroButtonActionPerformed"/>
@@ -132,7 +132,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnEncerrarSessao">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Encerrar sess&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="Encerrar Sess&#xe3;o"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEncerrarSessaoActionPerformed"/>
