@@ -14,8 +14,8 @@ public class LivroDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO LIVRO (LIV_NOME_LIVRO, LIV_ISBN, LIV_ANO, LIV_PAGINA, LIV_QUANTIDADE, LIV_CATEGORIA, LIV_PRECO) VALUES(?, ?, ?, ?, ?, ?, ?)");
-            //stmt.setString(1, "NULL");
+            stmt = con.prepareStatement("INSERT INTO LIVRO (ID_LIVRO, LIV_NOME_LIVRO, LIV_ISBN, LIV_ANO, LIV_PAGINA, LIV_QUANTIDADE, LIV_CATEGORIA, LIV_PRECO) VALUES(NULL, ?, ?, ?, ?, ?, ?, ?)");
+
             stmt.setString(1, lv.getTitulo());
             stmt.setString(2, lv.getIsbn());
             stmt.setInt(3, lv.getAnoDePublicacao());
