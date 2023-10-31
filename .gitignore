@@ -76,3 +76,4 @@ local.properties
 # Built Visual Studio Code Extensions
 *.vsix
 /psc/Aula 10-10/cadastroPessoas/target/
+/psc/aula_30-10/mavenproject1/target/
