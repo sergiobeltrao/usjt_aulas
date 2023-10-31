@@ -60,10 +60,10 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         txtAutorDataDeNascimento = new javax.swing.JTextField();
         txtNomeDoAutor = new javax.swing.JTextField();
         txtAutorNacionalidade = new javax.swing.JTextField();
-        txtAutorSexo = new javax.swing.JTextField();
         txtNomeDaEditora = new javax.swing.JTextField();
         boxBibliografia = new javax.swing.JScrollPane();
         txtAutorBibliografia = new javax.swing.JTextArea();
+        cmbAutorSexo = new javax.swing.JComboBox<>();
         pnSelect = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbSelect = new javax.swing.JTable();
@@ -111,13 +111,6 @@ public class CadastroDeLivros extends javax.swing.JFrame {
 
         txtAutorNacionalidade.setBorder(javax.swing.BorderFactory.createTitledBorder("Nacionalidade do Autor"));
 
-        txtAutorSexo.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo do Autor"));
-        txtAutorSexo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtAutorSexoActionPerformed(evt);
-            }
-        });
-
         txtNomeDaEditora.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome da Editora"));
 
         boxBibliografia.setBorder(null);
@@ -127,6 +120,14 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         txtAutorBibliografia.setRows(5);
         txtAutorBibliografia.setBorder(javax.swing.BorderFactory.createTitledBorder("Bibliografia do Autor"));
         boxBibliografia.setViewportView(txtAutorBibliografia);
+
+        cmbAutorSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Não informado", "Masculino", "Feminino" }));
+        cmbAutorSexo.setBorder(javax.swing.BorderFactory.createTitledBorder("Sexo do Autor"));
+        cmbAutorSexo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbAutorSexoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnInsertLayout = new javax.swing.GroupLayout(pnInsert);
         pnInsert.setLayout(pnInsertLayout);
@@ -144,17 +145,17 @@ public class CadastroDeLivros extends javax.swing.JFrame {
                             .addComponent(txtNomeDaEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtNumeroDePaginas, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
-                        .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtPreco, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAutorDataDeNascimento, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAutorSexo, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAutorNacionalidade, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE))
+                        .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtPreco, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtQuantidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtISBN, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtAutorDataDeNascimento, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(txtAutorNacionalidade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 330, Short.MAX_VALUE)
+                            .addComponent(cmbAutorSexo, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnInsertLayout.createSequentialGroup()
                         .addComponent(voltarButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                 .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnInsertLayout.createSequentialGroup()
                         .addComponent(btnCadastrar)
@@ -162,16 +163,14 @@ public class CadastroDeLivros extends javax.swing.JFrame {
                         .addComponent(btnEditar)
                         .addGap(52, 52, 52)
                         .addComponent(btnDeletar))
-                    .addGroup(pnInsertLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(boxBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(boxBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
         pnInsertLayout.setVerticalGroup(
             pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnInsertLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(pnInsertLayout.createSequentialGroup()
                         .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -195,8 +194,8 @@ public class CadastroDeLivros extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtNumeroDePaginas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtAutorSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(boxBibliografia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cmbAutorSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(boxBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnInsertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(voltarButton)
@@ -234,7 +233,7 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         );
         pnSelectLayout.setVerticalGroup(
             pnSelectLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 323, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 319, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -283,10 +282,21 @@ public class CadastroDeLivros extends javax.swing.JFrame {
 
         // Autor
         aut.setNome(txtNomeDoAutor.getText());
-        aut.setSexo(txtAutorSexo.getText());
         aut.setNacionalidade(txtAutorNacionalidade.getText());
         aut.setDataDeNascimento(txtAutorDataDeNascimento.getText());
         aut.setBibliografia(txtAutorBibliografia.getText());
+
+        // Opções de sexo do autor
+        String valorAutorSexo = cmbAutorSexo.getSelectedItem().toString();
+        String valorSelecionado = "MASC"; // Padrão "MASC" até implementar "OUTRO" no banco
+
+        if (valorAutorSexo.equals("Masculino")) {
+            valorSelecionado = "MASC";
+        } else if (valorAutorSexo.equals("Feminino")) {
+            valorSelecionado = "FEM";
+        }
+
+        aut.setSexo(valorSelecionado);
 
         // Editora
         ed.setNome(txtNomeDaEditora.getText());
@@ -304,7 +314,6 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         txtCategoria.setText("");
         txtPreco.setText("");
         txtNomeDoAutor.setText("");
-        txtAutorSexo.setText("");
         txtAutorNacionalidade.setText("");
         txtAutorDataDeNascimento.setText("");
         txtAutorBibliografia.setText("");
@@ -321,9 +330,9 @@ public class CadastroDeLivros extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_voltarButtonActionPerformed
 
-    private void txtAutorSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAutorSexoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtAutorSexoActionPerformed
+    private void cmbAutorSexoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbAutorSexoActionPerformed
+
+    }//GEN-LAST:event_cmbAutorSexoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -365,6 +374,7 @@ public class CadastroDeLivros extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnDeletar;
     private javax.swing.JButton btnEditar;
+    private javax.swing.JComboBox<String> cmbAutorSexo;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnInsert;
     private javax.swing.JPanel pnSelect;
@@ -373,7 +383,6 @@ public class CadastroDeLivros extends javax.swing.JFrame {
     private javax.swing.JTextArea txtAutorBibliografia;
     private javax.swing.JTextField txtAutorDataDeNascimento;
     private javax.swing.JTextField txtAutorNacionalidade;
-    private javax.swing.JTextField txtAutorSexo;
     private javax.swing.JTextField txtCategoria;
     private javax.swing.JTextField txtISBN;
     private javax.swing.JTextField txtNomeDaEditora;

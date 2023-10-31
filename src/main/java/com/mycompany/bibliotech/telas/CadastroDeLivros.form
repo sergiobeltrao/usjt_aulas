@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -74,21 +74,21 @@
                               <Component id="txtNumeroDePaginas" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace pref="120" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="txtPreco" min="-2" pref="330" max="-2" attributes="0"/>
-                              <Component id="txtQuantidade" min="-2" pref="330" max="-2" attributes="0"/>
-                              <Component id="txtISBN" min="-2" pref="330" max="-2" attributes="0"/>
-                              <Component id="txtAutorDataDeNascimento" min="-2" pref="330" max="-2" attributes="0"/>
-                              <Component id="txtAutorSexo" alignment="0" min="-2" pref="330" max="-2" attributes="0"/>
-                              <Component id="txtAutorNacionalidade" min="-2" pref="330" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="txtPreco" alignment="1" pref="330" max="32767" attributes="0"/>
+                              <Component id="txtQuantidade" alignment="1" pref="330" max="32767" attributes="0"/>
+                              <Component id="txtISBN" alignment="1" pref="330" max="32767" attributes="0"/>
+                              <Component id="txtAutorDataDeNascimento" alignment="1" pref="330" max="32767" attributes="0"/>
+                              <Component id="txtAutorNacionalidade" alignment="1" pref="330" max="32767" attributes="0"/>
+                              <Component id="cmbAutorSexo" alignment="1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="94" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Component id="voltarButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace pref="94" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="btnCadastrar" min="-2" max="-2" attributes="0"/>
@@ -97,10 +97,7 @@
                           <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                           <Component id="btnDeletar" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="boxBibliografia" min="-2" pref="330" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="boxBibliografia" min="-2" pref="330" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
@@ -110,7 +107,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtTitulo" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -139,10 +136,10 @@
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="txtNumeroDePaginas" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="txtAutorSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cmbAutorSexo" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="boxBibliografia" alignment="1" min="-2" pref="295" max="-2" attributes="0"/>
+                      <Component id="boxBibliografia" min="-2" pref="295" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -277,18 +274,6 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtAutorSexo">
-          <Properties>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
-                <TitledBorder title="Sexo do Autor"/>
-              </Border>
-            </Property>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtAutorSexoActionPerformed"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JTextField" name="txtNomeDaEditora">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -324,6 +309,28 @@
             </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JComboBox" name="cmbAutorSexo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="N&#xe3;o informado"/>
+                <StringItem index="1" value="Masculino"/>
+                <StringItem index="2" value="Feminino"/>
+              </StringArray>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                <TitledBorder title="Sexo do Autor"/>
+              </Border>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cmbAutorSexoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+          </AuxValues>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pnSelect">
@@ -343,7 +350,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="323" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="319" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

@@ -69,7 +69,7 @@ CREATE TABLE LIVRO (
 );
 
 INSERT INTO LIVRO VALUES(
-	NULL, 'O Segredo das Estrelas', '978-1234567890', '1980-10-12', 320, 10,  'Ficção Científica', '180.20');
+	NULL, 'O Segredo das Estrelas', '978-1234567890', '1980', 320, 10,  'Ficção Científica', '180.20');
 
 CREATE TABLE AUTOR(
 	ID_AUTOR INT PRIMARY KEY AUTO_INCREMENT,

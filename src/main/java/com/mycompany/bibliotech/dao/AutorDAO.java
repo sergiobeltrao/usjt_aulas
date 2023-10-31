@@ -30,7 +30,7 @@ public class AutorDAO {
             // Desativado por enquanto para evitar duplicidade de mensagens
             // JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
+            JOptionPane.showMessageDialog(null, "Erro nos dados do autor: " + ex);
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }

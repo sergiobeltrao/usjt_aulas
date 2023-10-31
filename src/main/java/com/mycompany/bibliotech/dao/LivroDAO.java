@@ -32,7 +32,7 @@ public class LivroDAO {
             
             JOptionPane.showMessageDialog(null, "Salvo com sucesso!");
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao salvar: " + ex);
+            JOptionPane.showMessageDialog(null, "Erro nos dados do livro: " + ex);
         } finally {
             ConnectionFactory.closeConnection(con, stmt);
         }
