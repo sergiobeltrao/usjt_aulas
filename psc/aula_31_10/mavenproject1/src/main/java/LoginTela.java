@@ -97,6 +97,9 @@ public class LoginTela extends javax.swing.JFrame {
             UsuarioDAO dao = new UsuarioDAO();
             if (dao.existeUsuario(usuario)) {
                 JOptionPane.showMessageDialog(null, "Bem-vindo ao sistema, " + usuario.getNome());
+                DashboardTela dt = new DashboardTela();
+                dt.setVisible(true);
+                this.dispose();
             } else {
                 JOptionPane.showMessageDialog(null, "Usuário não cadastrado");
             }
