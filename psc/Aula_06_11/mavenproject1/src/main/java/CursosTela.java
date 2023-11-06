@@ -8,7 +8,10 @@ public class CursosTela extends javax.swing.JFrame {
      * Creates new form CursosTela
      */
     public CursosTela() {
+        super("Gerenciamento de Cursos");
         initComponents();
+        buscarCursos();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -158,7 +161,7 @@ public class CursosTela extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JComboBox<cursos> cursosComboBox;
+    private javax.swing.JComboBox<Curso> cursosComboBox;
     private javax.swing.JTextField idCursoTxtFild;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nomeCursoTxtFild;

@@ -21,6 +21,11 @@ public class DashboardTela extends javax.swing.JFrame {
 
         btnGerenciaCurso.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         btnGerenciaCurso.setText("Gerenciar Cursos");
+        btnGerenciaCurso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciaCursoActionPerformed(evt);
+            }
+        });
 
         btnGerenciamentoAlunos.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         btnGerenciamentoAlunos.setText("Gerenciar Alunos");
@@ -65,6 +70,12 @@ public class DashboardTela extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnGerenciaCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciaCursoActionPerformed
+        CursosTela ct = new CursosTela();
+        ct.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnGerenciaCursoActionPerformed
 
     /**
      * @param args the command line arguments

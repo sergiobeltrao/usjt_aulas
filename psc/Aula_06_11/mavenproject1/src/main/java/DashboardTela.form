@@ -83,6 +83,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Gerenciar Cursos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnGerenciaCursoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnGerenciamentoAlunos">
           <Properties>

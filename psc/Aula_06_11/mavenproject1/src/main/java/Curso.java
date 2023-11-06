@@ -35,4 +35,9 @@ public class Curso {
         this.tipo = tipo;
     }
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
+
 }
