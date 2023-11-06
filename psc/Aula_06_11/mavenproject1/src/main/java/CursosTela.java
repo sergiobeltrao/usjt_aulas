@@ -1,12 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 
-/**
- *
- * @author 822146479
- */
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+
 public class CursosTela extends javax.swing.JFrame {
 
     /**
@@ -40,7 +35,6 @@ public class CursosTela extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gerenciamento de Cursos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 15))); // NOI18N
 
         cursosComboBox.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
-        cursosComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         idCursoTxtFild.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         idCursoTxtFild.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
@@ -164,10 +158,24 @@ public class CursosTela extends javax.swing.JFrame {
     private javax.swing.JButton btnCancelar;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnRemover;
-    private javax.swing.JComboBox<String> cursosComboBox;
+    private javax.swing.JComboBox<cursos> cursosComboBox;
     private javax.swing.JTextField idCursoTxtFild;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField nomeCursoTxtFild;
     private javax.swing.JTextField tipoCursoTxtFild;
     // End of variables declaration//GEN-END:variables
+
+    private void buscarCursos() {
+
+        try {
+            CursoDAO cd = new CursoDAO();
+            Curso[] cursos = cd.obterCursos();
+            cursosComboBox.setModel(new DefaultComboBoxModel<>(cursos));
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Lista de cursos não encontrada");
+            e.printStackTrace();
+        }
+    }
+
 }

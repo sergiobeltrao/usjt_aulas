@@ -20,13 +20,17 @@ public class CursoDAO {
             // Maneira alternativa de escrever atribuição
             // int toatalCursos = rs.last() ? rs.getRow() : 0;
             
-            Curso curso[] = new Curso[totalCursos];
+            Curso cursos[] = new Curso[totalCursos];
             rs.beforeFirst();
+            int cont = 0;
             while (rs.next()) {
             int id = rs.getInt("ID");
             String nome = rs.getString("NOME");
             String tipo = rs.getString("TIPO");
-            } 
+            Curso c = new Curso(id, nome, tipo);
+            cursos[cont++] = c;
+            }
+            return cursos;
         }
     }
 }
