@@ -50,6 +50,11 @@ public class CursosTela extends javax.swing.JFrame {
 
         btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnNovo.setText("Novo");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnAtualizar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnAtualizar.setText("Atualizar");
@@ -121,6 +126,33 @@ public class CursosTela extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        //Capturar as informações digitadas
+        String nomeCurso = nomeCursoTxtFild.getText();
+        String tipoCurso = tipoCursoTxtFild.getText();
+
+        if (nomeCurso == null || nomeCurso.length() == 0 || tipoCurso == null || tipoCurso.length() == 0) {
+            JOptionPane.showMessageDialog(null, "Por favor preencha os dois campos!");
+        } else {
+            try {
+                int opcao = JOptionPane.showConfirmDialog(null, "Confirma inserção?");
+                if (opcao == JOptionPane.YES_NO_OPTION) {
+                    Curso curso = new Curso(nomeCurso, tipoCurso);
+                    CursoDAO cd = new CursoDAO();
+                    cd.inserirCurso(curso);
+                    nomeCursoTxtFild.setText("");
+                    tipoCursoTxtFild.setText("");
+                    JOptionPane.showMessageDialog(null, "Curso cadastrado com sucesso!");
+                    buscarCursos();
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro! Problemas técnicos");
+                e.printStackTrace();
+            }
+
+        }
+    }//GEN-LAST:event_btnNovoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -132,7 +164,7 @@ public class CursosTela extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -174,8 +206,7 @@ public class CursosTela extends javax.swing.JFrame {
             CursoDAO cd = new CursoDAO();
             Curso[] cursos = cd.obterCursos();
             cursosComboBox.setModel(new DefaultComboBoxModel<>(cursos));
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Lista de cursos não encontrada");
             e.printStackTrace();
         }
