@@ -40,4 +40,14 @@ public class CursoDAO {
             ps.execute();
         }
     }
+
+    public void atualizarCurso(Curso curso) throws Exception {
+        String sql = "UPDATE TB_CURSOS SET NOME = ?, TIPO = ? WHERE ID = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, curso.getNome());
+            ps.setString(2, curso.getTipo());
+            ps.setInt(3, curso.getId());
+            ps.execute();
+        }
+    }
 }

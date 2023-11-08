@@ -38,15 +38,30 @@ public class CursosTela extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Gerenciamento de Cursos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 15))); // NOI18N
 
         cursosComboBox.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        cursosComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cursosComboBoxActionPerformed(evt);
+            }
+        });
 
         idCursoTxtFild.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         idCursoTxtFild.setBorder(javax.swing.BorderFactory.createTitledBorder("ID"));
 
         nomeCursoTxtFild.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         nomeCursoTxtFild.setBorder(javax.swing.BorderFactory.createTitledBorder("Nome"));
+        nomeCursoTxtFild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomeCursoTxtFildActionPerformed(evt);
+            }
+        });
 
         tipoCursoTxtFild.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         tipoCursoTxtFild.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo"));
+        tipoCursoTxtFild.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoCursoTxtFildActionPerformed(evt);
+            }
+        });
 
         btnNovo.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnNovo.setText("Novo");
@@ -58,6 +73,11 @@ public class CursosTela extends javax.swing.JFrame {
 
         btnAtualizar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnAtualizar.setText("Atualizar");
+        btnAtualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtualizarActionPerformed(evt);
+            }
+        });
 
         btnRemover.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnRemover.setText("Remover");
@@ -130,7 +150,7 @@ public class CursosTela extends javax.swing.JFrame {
         //Capturar as informações digitadas
         String nomeCurso = nomeCursoTxtFild.getText();
         String tipoCurso = tipoCursoTxtFild.getText();
-
+        
         if (nomeCurso == null || nomeCurso.length() == 0 || tipoCurso == null || tipoCurso.length() == 0) {
             JOptionPane.showMessageDialog(null, "Por favor preencha os dois campos!");
         } else {
@@ -149,9 +169,46 @@ public class CursosTela extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Erro! Problemas técnicos");
                 e.printStackTrace();
             }
-
+            
         }
     }//GEN-LAST:event_btnNovoActionPerformed
+
+    private void nomeCursoTxtFildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomeCursoTxtFildActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomeCursoTxtFildActionPerformed
+
+    private void tipoCursoTxtFildActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoCursoTxtFildActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tipoCursoTxtFildActionPerformed
+
+    private void cursosComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cursosComboBoxActionPerformed
+        Curso curso = (Curso) cursosComboBox.getSelectedItem();
+        idCursoTxtFild.setText(Integer.toString(curso.getId()));
+        nomeCursoTxtFild.setText(curso.getNome());
+        tipoCursoTxtFild.setText(curso.getTipo());
+    }//GEN-LAST:event_cursosComboBoxActionPerformed
+
+    private void btnAtualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtualizarActionPerformed
+        int opcao = JOptionPane.showConfirmDialog(null, "Confirma atualização");
+        if (opcao == JOptionPane.YES_NO_OPTION) {
+            try {
+                int id = Integer.parseInt(idCursoTxtFild.getText());
+                String nome = nomeCursoTxtFild.getText();
+                String tipo = tipoCursoTxtFild.getText();
+                Curso curso = new Curso(id, nome, tipo);
+                CursoDAO cd = new CursoDAO();
+                cd.atualizarCurso(curso);
+                JOptionPane.showMessageDialog(null, "Curso atualizado!");
+                buscarCursos();
+                idCursoTxtFild.setText("");
+                nomeCursoTxtFild.setText("");
+                tipoCursoTxtFild.setText("");
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Deu ruim! Chama o ADM");
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_btnAtualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -201,7 +258,7 @@ public class CursosTela extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void buscarCursos() {
-
+        
         try {
             CursoDAO cd = new CursoDAO();
             Curso[] cursos = cd.obterCursos();
@@ -211,5 +268,5 @@ public class CursosTela extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-
+    
 }
