@@ -7,6 +7,10 @@ public class Curso {
     private String nome;
     private String tipo;
 
+    public Curso(int id) {
+        this.id = id;
+    }
+
     public Curso(int id, String nome, String tipo) {
         this.id = id;
         this.nome = nome;

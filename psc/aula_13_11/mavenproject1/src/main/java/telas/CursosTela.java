@@ -1,3 +1,5 @@
+package telas;
+
 
 import model.Curso;
 import dao.CursoDAO;
@@ -221,9 +223,10 @@ public class CursosTela extends javax.swing.JFrame {
         int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente remover o curso?");
         if (opcao == JOptionPane.YES_OPTION) {
             try {
-
+                int id = Integer.parseInt(idCursoTxtFild.getText());
+                Curso curso = new Curso(id);
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Erro inseperado!");
+                JOptionPane.showMessageDialog(null, "Erro inseperado!");
                 e.printStackTrace();
             }
         }

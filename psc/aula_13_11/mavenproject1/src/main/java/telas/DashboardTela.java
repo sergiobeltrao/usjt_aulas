@@ -1,3 +1,8 @@
+package telas;
+
+
+import telas.CursosTela;
+
 
 public class DashboardTela extends javax.swing.JFrame {
 
