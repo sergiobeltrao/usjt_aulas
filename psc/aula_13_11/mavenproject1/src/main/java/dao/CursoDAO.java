@@ -1,7 +1,12 @@
+package dao;
 
+
+import connection.ConnectionFactory;
+import model.Curso;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import connection.ConnectionFactory;
 
 public class CursoDAO {
 
@@ -50,8 +55,12 @@ public class CursoDAO {
             ps.execute();
         }
     }
-    
-    public void removerCurso(Curso curso) throws Exception{
-    
+
+    public void removerCurso(Curso curso) throws Exception {
+        String sql = "DELETE FROM TB_CURSOS WHERE ID = ?";
+        try (Connection conn = ConnectionFactory.obtemConexao(); PreparedStatement ps = conn.prepareStatement(sql);) {
+            ps.setInt(1, curso.getId());
+            ps.execute();
+        }
     }
 }

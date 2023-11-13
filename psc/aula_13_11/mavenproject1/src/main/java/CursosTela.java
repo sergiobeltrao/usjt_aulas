@@ -1,4 +1,6 @@
 
+import model.Curso;
+import dao.CursoDAO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
@@ -216,7 +218,15 @@ public class CursosTela extends javax.swing.JFrame {
     }//GEN-LAST:event_btnAtualizarActionPerformed
 
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
-        
+        int opcao = JOptionPane.showConfirmDialog(null, "Deseja realmente remover o curso?");
+        if (opcao == JOptionPane.YES_OPTION) {
+            try {
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null,"Erro inseperado!");
+                e.printStackTrace();
+            }
+        }
     }//GEN-LAST:event_btnRemoverActionPerformed
 
     /**

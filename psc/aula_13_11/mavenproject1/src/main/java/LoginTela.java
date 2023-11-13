@@ -1,4 +1,6 @@
 
+import model.Usuario;
+import dao.UsuarioDAO;
 import javax.swing.JOptionPane;
 
 public class LoginTela extends javax.swing.JFrame {
