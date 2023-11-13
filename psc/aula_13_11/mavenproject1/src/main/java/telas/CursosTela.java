@@ -1,6 +1,5 @@
 package telas;
 
-
 import model.Curso;
 import dao.CursoDAO;
 import javax.swing.DefaultComboBoxModel;
@@ -93,6 +92,11 @@ public class CursosTela extends javax.swing.JFrame {
 
         btnCancelar.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnCancelar.setText("Cancelar");
+        btnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -225,12 +229,25 @@ public class CursosTela extends javax.swing.JFrame {
             try {
                 int id = Integer.parseInt(idCursoTxtFild.getText());
                 Curso curso = new Curso(id);
+                CursoDAO cd = new CursoDAO();
+                cd.removerCurso(curso);
+                JOptionPane.showMessageDialog(null, "Curso removido com sucesso!");
+                buscarCursos();
+                nomeCursoTxtFild.setText("");
+                tipoCursoTxtFild.setText("");
+                idCursoTxtFild.setText("");
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Erro inseperado!");
                 e.printStackTrace();
             }
         }
     }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        DashboardTela dt = new DashboardTela();
+        dt.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
