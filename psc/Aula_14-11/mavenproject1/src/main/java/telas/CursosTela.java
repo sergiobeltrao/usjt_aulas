@@ -35,6 +35,7 @@ public class CursosTela extends javax.swing.JFrame {
         btnAtualizar = new javax.swing.JButton();
         btnRemover = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
+        btnMostrarAlunos = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,25 +99,33 @@ public class CursosTela extends javax.swing.JFrame {
             }
         });
 
+        btnMostrarAlunos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
+        btnMostrarAlunos.setText("Mostrar Alunos");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tipoCursoTxtFild)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnNovo)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnAtualizar)
-                        .addGap(40, 40, 40)
-                        .addComponent(btnRemover)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnCancelar))
-                    .addComponent(nomeCursoTxtFild)
-                    .addComponent(idCursoTxtFild)
-                    .addComponent(cursosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(74, 74, 74)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(tipoCursoTxtFild)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnNovo)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnAtualizar)
+                                .addGap(40, 40, 40)
+                                .addComponent(btnRemover)
+                                .addGap(41, 41, 41)
+                                .addComponent(btnCancelar))
+                            .addComponent(nomeCursoTxtFild)
+                            .addComponent(idCursoTxtFild)
+                            .addComponent(cursosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(248, 248, 248)
+                        .addComponent(btnMostrarAlunos)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -136,7 +145,9 @@ public class CursosTela extends javax.swing.JFrame {
                     .addComponent(btnAtualizar)
                     .addComponent(btnRemover)
                     .addComponent(btnCancelar))
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btnMostrarAlunos)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -153,7 +164,7 @@ public class CursosTela extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -287,6 +298,7 @@ public class CursosTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtualizar;
     private javax.swing.JButton btnCancelar;
+    private javax.swing.JButton btnMostrarAlunos;
     private javax.swing.JButton btnNovo;
     private javax.swing.JButton btnRemover;
     private javax.swing.JComboBox<Curso> cursosComboBox;
