@@ -101,6 +101,11 @@ public class CursosTela extends javax.swing.JFrame {
 
         btnMostrarAlunos.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         btnMostrarAlunos.setText("Mostrar Alunos");
+        btnMostrarAlunos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMostrarAlunosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -124,7 +129,7 @@ public class CursosTela extends javax.swing.JFrame {
                             .addComponent(idCursoTxtFild)
                             .addComponent(cursosComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(248, 248, 248)
+                        .addGap(238, 238, 238)
                         .addComponent(btnMostrarAlunos)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
@@ -259,6 +264,13 @@ public class CursosTela extends javax.swing.JFrame {
         dt.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelarActionPerformed
+
+    private void btnMostrarAlunosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMostrarAlunosActionPerformed
+        Curso curso = (Curso) cursosComboBox.getSelectedItem();
+        MostraAlunosCursoTela ac = new MostraAlunosCursoTela(curso);
+        ac.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnMostrarAlunosActionPerformed
 
     /**
      * @param args the command line arguments

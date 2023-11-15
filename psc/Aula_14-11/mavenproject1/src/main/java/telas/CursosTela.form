@@ -57,7 +57,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
+                      <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="tipoCursoTxtFild" max="32767" attributes="0"/>
@@ -76,7 +76,7 @@
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
                           <Component id="btnMostrarAlunos" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -219,6 +219,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Mostrar Alunos"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMostrarAlunosActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
